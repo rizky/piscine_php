@@ -74,7 +74,7 @@ header img.close{
     border: 5px solid red;
     border-radius: 5px;
 }
-#brick-bg {
+#brick {
 	background-image: url('resources/brick.jpg');
 	width: 120px;
 	height: 70px;

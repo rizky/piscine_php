@@ -2,87 +2,45 @@ var formAction = 0;
 
 function form(event){
 	event.preventDefault();
-	console.log("test");
     var question = document.querySelector("#form input[type='text']").value;
-    var reponse = document.querySelector("#reponse");
+    var reponse = document.getElementById("reponse");
     var randomQuestion = new Array(
-        "Il fait chaud aujourd'hui non ?",
-        "J'aime pas les gens qui parle en e3, et toi ?",
-        "Les machines à café fonctionne ?",
-        "Tu es quel niveau ?",
-        "Tu veux pas aller faire un pingpong ?"
-    );
+        "How are you today?",
+        "Are you hungry?",
+        "Are you tired?",
+        "What is your level?"
+	);
     switch(formAction) {
         case 0:
-            if (question.indexOf("non") > -1) {
-                reponse.innerHTML = "Quel est ton login alors ?";
-                formAction = 10;
-            } else if (question.indexOf("oui") > -1) {
-                reponse.innerHTML = "Cool, tu veux pas faire 42 ?";
-                formAction = 20;
+            if (question.toLowerCase().indexOf("no") !== -1) {
+                reponse.innerHTML = "Welcome back! Which menu do you want to access";
+            } else if (question.toLowerCase().indexOf("yes") !== -1) {
+                reponse.innerHTML = "Welcome to 42! Which menu do you want to access";
             } else {
-                reponse.innerHTML = "J'ai pas compris :/";
-            }
-            break;
-        case 10:
-            reponse.innerHTML = "Bonjour " + question + " ! Tu fais la piscine PHP ?";
-            formAction = 11;
-            break;
-        case 11:
-            if (question.indexOf("non") > -1) {
-                reponse.innerHTML = "Ah, pourquoi tu me corrige alors ?";
-                formAction = 12;
-            } else if (question.indexOf("oui") > -1) {
-                reponse.innerHTML = "Cool, Tu as fait combien d'exercice du jours 00 ?";
-                formAction = 13;
-            } else {
-                reponse.innerHTML = "J'ai pas compris :/";
-            }
-            break;
-        case 12:
-                reponse.innerHTML = "Ah okay, alors bon jeux :)";
-                formAction = 100;
-            break;
-        case 13:
-            if (question.indexOf("1") > -1)
-                reponse.innerHTML = "Ah, demande moi, je peux t'aider !";
-            if (question.indexOf("2") > -1)
-                reponse.innerHTML = "Mandeleiev de mes couilles... Tellement chiant cet exercice.";
-            if (question.indexOf("3") > -1)
-                reponse.innerHTML = "Ta vu, le site de 'exercice 3 est trop moche ahah";
-            if (question.indexOf("4") > -1)
-                reponse.innerHTML = "Simpa le menu en CSS :)";
-            if (question.indexOf("5") > -1)
-                reponse.innerHTML = "T'es un PGM";
-            formAction = 100;
-            break;
-        case 20:
-            if (question.indexOf("non") > -1) {
-                reponse.innerHTML = "Ah, pourquoi, tu vera c'est cool ?";
-                formAction = 21;
-            } else if (question.indexOf("oui") > -1) {
-                reponse.innerHTML = "Alors bonne chance :D Tu la fais quel mois ?";
-                formAction = 22;
-            } else {
-                reponse.innerHTML = "J'ai pas compris :/";
-            }
-            break;
-        case 21:
-            reponse.innerHTML = "Je suis pas d'accord avec toi :/ Je part, a+";
-            formAction = 100;
-            break;
-        case 22:
-            reponse.innerHTML = "Alors bonne chance :)";
-            formAction = 100;
-            break;
-        case 100:
-            reponse.innerHTML = randomQuestion[Math.floor((Math.random() * randomQuestion.length))];
-            formAction = 100;
-            break;
+                reponse.innerHTML = "I don't understand";
+			}
+			formAction = 1;
+			break;
+		case 1:
+			if (question.toLowerCase().indexOf("advance") !== -1){
+				selectImg(document.getElementById("advance")); goto('login');
+			} else if (question.toLowerCase().indexOf("take") !== -1){
+				selectImg(document.getElementById("take")); goto('action');
+			} else if (question.toLowerCase().indexOf("look") !== -1){
+				selectImg(document.getElementById("look")); goto('look');
+			} else if (question.toLowerCase().indexOf("use") !== -1){
+				selectImg(document.getElementById("use")); goto('use');
+			} else if (question.toLowerCase().indexOf("speak") !== -1){
+				selectImg(document.getElementById("speak")); toggleSpeak();
+			} else if (question.toLowerCase().indexOf("book") !== -1){
+				selectImg(document.getElementById("book")); goto('dont-panic');
+			} else if (question.toLowerCase().indexOf("towel") !== -1){
+				selectImg(document.getElementById("towel")); goto('piscine');
+			} else if (question.toLowerCase().indexOf("brick") !== -1){
+				selectImg(document.getElementById("brick")); goto('art');
+			} else if (question.toLowerCase().indexOf("search") !== -1){
+				selectImg(document.getElementById("search")); goto('bing');
+			} 
     }
     document.querySelector("#form input[type='text']").value = " ";
-}
-
-window.onload = function () {
-    document.querySelector("#form").addEventListener("submit", form);
 }

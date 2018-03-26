@@ -1,6 +1,3 @@
-window.onload = function(){ 
-	dragElement(document.getElementById(("chat-section")));
-};
 function dragElement(elmnt) {
 	var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 	elmnt.onmousedown = dragMouseDown;
@@ -13,9 +10,6 @@ function dragElement(elmnt) {
 	  document.onmouseup = closeDragElement;
 	  // call a function whenever the cursor moves:
 	  document.onmousemove = elementDrag;
-	  console.log(pos3);
-	  console.log(pos4);
-	  console.log("--");
 	}
   
 	function elementDrag(e) {
