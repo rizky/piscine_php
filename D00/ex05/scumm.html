@@ -18,7 +18,7 @@
 	<div class="page">
 		<header>
 			<img class="logo" src="resources/day_of_the_42.png"/>
-			<img onclick="selectImg(this); goto('bing')" class="search" src="resources/loupe.png"/>
+			<img onclick="selectImg(this); goto('bing')" class="search" src="resources/loupe.png" id="search" alt="Search" title="Search"/>
 			<a href="http://www.disney.com">
 				<img class="reload" src="resources/reload.png" title="Start from the beginning" alt="Start from the beginning"/>
 			</a>
@@ -74,9 +74,9 @@
 			</div>
 		</div>
 		<div class="right-section">
-			<img onclick="selectImg(this); goto('dont-panic')" src="resources/book.png" id="book"/>
-			<img onclick="selectImg(this); goto('piscine')" src="resources/towel.png" id="towel"/>
-			<div onclick="selectImg(this); goto('art')" id="brick"></div>
+			<img onclick="selectImg(this); goto('dont-panic')" src="resources/book.png" id="book" alt="Book" title="Book"/>
+			<img onclick="selectImg(this); goto('piscine')" src="resources/towel.png" id="towel" alt="Towel" title="Towel"/>
+			<div onclick="selectImg(this); goto('art')" id="brick" role="Brick"></div>
 		</div>
 	</div>
 </body>
