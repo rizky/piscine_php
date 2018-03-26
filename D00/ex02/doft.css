@@ -3,8 +3,7 @@ body{
 	color: black;
 }
 .page {
-	margin: 0 auto;
-	width: 1420px;
+	text-align: center;
 }
 header, .left-section, .center-section, .right-section, .chat-section{
 	background-color: #909090;
@@ -15,54 +14,63 @@ header, .left-section, .center-section, .right-section, .chat-section{
 	margin-left: 20px;
 }
 header{
-	height: 137px;
-	width: 1420px;
-	position: relative;
+	height: 110px;
+	width: 1400px;
+	position:relative;
+	margin-left: auto;
+	margin-right: auto;
 }
 .logo{
-	width: 500px;
+	position: absolute;
+	width: 400px;
+	left: 10px;
 }
 .search{
-	width: 200px;
+	width: 230px;
 	position: absolute;
-	right: 300px;
+	right: 30px;
 	bottom: -20px;
 }
-header .button{
+header img.reload, header img.close{
 	width: 20px;
+	position: absolute;
+	right: 10px;
 }
-.reload{
+header img.reload{
 	position: absolute;
 	top: 10px;
-	right: 10px;
 }
-.close{
+header img.close{
 	position: absolute;
 	bottom: 10px;
-	right: 10px;
+}
+.left-section, .center-section, .right-section{
+	display: inline-block;
+	vertical-align:top;
+	text-align: center;
+}
+.left-section, .right-section{
+	width: 120px;
 }
 .left-section{
-	float: left;
-	width: 100px;
 	height: 410px;
-}
-.left-section img{
-	width: 50px;
-	height: 50px;
-}
-.center-section{
-	float: left;
-	position: relative;
-
+	margin-left: 0px;
 }
 .right-section{
-	float: left;
-	width: 100px;
-	height: 480px;
+	height: 420px;
 }
-.right-section img{
-	width: 50px;
-	height: 50px;
+.left-section img, .right-section img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	width: 70px;
+}
+#brick-bg {
+	background-image: url('resources/brick.jpg');
+	width: 120px;
+	height: 70px;
+	margin: 0 auto;
 }
 .chat-section{
 	background-color: #a6fb96;
@@ -72,17 +80,13 @@ header .button{
 	bottom: 0px;
 	left: -20;
 }
-.italic {
+.chat-section span.italic {
 	font-style: italic;
 }
-.big {
+.chat-section span.big {
 	font-family: Times;
 	font-size: 31px;
 }
-#brick-bg {
-	content: '';
-	background-image: url('resources/brick.jpg');
-	width: 120px;
-	height: 70px;
-	margin:-5px 0 0 -25px;
+.chat-section span.shadow {
+    text-shadow: 5px 5px 5px #ff0000;
 }
