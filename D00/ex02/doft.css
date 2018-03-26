@@ -37,16 +37,14 @@ header img.reload, header img.close{
 	right: 10px;
 }
 header img.reload{
-	position: absolute;
 	top: 10px;
 }
 header img.close{
-	position: absolute;
 	bottom: 10px;
 }
 .left-section, .center-section, .right-section{
 	display: inline-block;
-	vertical-align:top;
+	vertical-align: top;
 	text-align: center;
 }
 .left-section, .right-section{
@@ -66,6 +64,10 @@ header img.close{
 	margin-bottom: 10px;
 	width: 70px;
 }
+.left-section img.selected {
+    border: 5px solid red;
+    border-radius: 5px;
+}
 #brick-bg {
 	background-image: url('resources/brick.jpg');
 	width: 120px;
@@ -74,11 +76,12 @@ header img.close{
 }
 .chat-section{
 	background-color: #a6fb96;
-	width: 500px;
-	height: 150px;
+	width: 400px;
+	height: 120px;
+	left: 100px;
+	bottom: 50px;
 	position: absolute;
-	bottom: 0px;
-	left: -20;
+	text-align: justify;
 }
 .chat-section span.italic {
 	font-style: italic;
@@ -89,4 +92,20 @@ header img.close{
 }
 .chat-section span.shadow {
     text-shadow: 5px 5px 5px #ff0000;
+}
+.chat-section form input[type="text"] {
+    margin-left: 2px;
+    width: 300px;
+    border: 2px solid #9d969d;
+    border-bottom-color: #eeeeee;
+    border-right-color: #eeeeee;
+    height: 15px;
+}
+.chat-section form input[type="submit"] {
+    border: 1px solid #a8a4a5;
+    border-radius: 1px;
+    background-color: #f4eff3;
+    margin-left: 4px;
+    height: 20px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f4eff3), to(#dcdcdc));
 }
