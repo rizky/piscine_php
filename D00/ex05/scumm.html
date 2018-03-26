@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="doft.css">
 	<script src="nav.js"></script>
 	<script src="chat.js"></script>
+	<script src="drag.js"></script>
 </head>
 <body>
 	<div class="page">
@@ -20,10 +21,10 @@
 			</a>
 		</header>
 		<div class="left-section">
-			<img onclick="selectImg(this)" src="resources/arrow.png" alt="Advance" title="Advance"/>
-			<img onclick="selectImg(this)" src="resources/main.png" alt="Take" title="Take"/>
+			<img onclick="selectImg(this); goto('login')" src="resources/arrow.png" alt="Advance" title="Advance"/>
+			<img onclick="selectImg(this); goto('action')" src="resources/main.png" alt="Take" title="Take"/>
 			<img onclick="selectImg(this); goto('look')" class="selected" src="resources/oeil.png" alt="Look" title="Look"/>
-			<img onclick="selectImg(this)" src="resources/outil.png" alt="Use" title="Use"/>
+			<img onclick="selectImg(this); goto('help')" src="resources/outil.png" alt="Use" title="Use"/>
 			<img onclick="selectImg(this); toggleSpeak()" src="resources/chat-icon.png" alt="Speak" title="Speak"/>
 		</div>
 		<div class="center-section">
@@ -34,20 +35,34 @@
 					<area alt="mac" title="Need an iMac?" href="http://www.apple.com" shape="rect" coords="805,318,1003,497"/>
 				</map>
 			</div>
-			<div class="content piscine">
+			<!-- <div class="content piscine">
 				<iframe height="100%" width="100%" src="https://www.bing.com/images/search?q=piscine+ecole+42"></iframe>
 			</div>
 			<div class="content bing">
 				<iframe height="100%" width="100%" src="https://www.bing.com/"></iframe>
 			</div>
 			<div class="content dont-panic">
-					<iframe height="100%" width="100%" src="https://www.youtube.com/embed/8uxt-FnNy2I"></iframe>
-				</div>
-			<div class="chat-section">
+				<iframe height="100%" width="100%" src="http://mapiscine.tumblr.com"></iframe>
+			</div>
+			<div class="content art">
+				<iframe height="100%" width="100%" src="http://www.art42.fr"></iframe>
+			</div>
+			<div class="content help">
+				<iframe height="100%" width="100%" src="http://www.42.fr/les-aides/"></iframe>
+			</div>
+			<div class="content action">
+				<iframe height="100%" width="100%" src="http://www.42.fr/etre-admissible/"></iframe>
+			</div> -->
+			<div class="content login">
+				<a href="https://signin.intra.42.fr/users/sign_in">
+					<img src="resources/login.png"/>
+				</a>
+			</div>
+			<div class="chat-section" id="chat-section" style="bottom:-70px;left:-200px">
 				Vous <span class="big">entrez</span> alors dans une grande piece remplie<br>d'<span class="shadow">ordinateurs</span>...<br>
-				<span class="italic">- Bonjour, vous êtes nouveau ici ?</span>
-				<form action="#">
-					<input type="text">
+				<span class="italic" id="reponse">- Bonjour, vous êtes nouveau ici ?</span>
+				<form action="#" id="form">
+					<input type="text" name="question" value="">
 					<input type="submit" value="Repondre">
 				</form>
 			</div>
@@ -55,7 +70,7 @@
 		<div class="right-section">
 			<img onclick="selectImg(this); goto('dont-panic')" src="resources/book.png"/>
 			<img onclick="selectImg(this); goto('piscine')" src="resources/towel.png"/>
-			<div id="brick-bg">
+			<div onclick="selectImg(this); goto('art')" id="brick-bg">
 			</div>
 		</div>
 	</div>

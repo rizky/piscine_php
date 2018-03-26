@@ -21,3 +21,9 @@ function goto(name){
 	var x = document.getElementsByClassName(name)[0];
     x.style.display = "block";
 }
+window.onload = function () {
+    var contents = document.getElementsByClassName("content");
+    for (i = 0; i < contents.length; i++) {
+		contents[i].style.display = "none";
+	}
+}
