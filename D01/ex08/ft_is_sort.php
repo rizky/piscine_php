@@ -1,11 +1,20 @@
 <?php
 	function ft_is_sort($tab)
 	{
-		foreach($tab as $key=>$val)
+		$i = 0;
+		while ($i < count($tab) - 1)
 		{
-			if ($key > 0 && $val < $tab[$key - 1])
-				return (0);
+			if ($tab[$i] < $tab[$i + 1])
+				$min = $min + 1;
+			else
+				$plus = $plus + 1;
+			$i++;
 		}
-		return (1);
+		if ($min == 0)
+			return (1);
+		else if ($plus == 0)
+			return (1);
+		else
+			return (0);
 	}
 ?>
