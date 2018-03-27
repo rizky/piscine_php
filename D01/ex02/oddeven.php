@@ -1,12 +1,15 @@
 #!/usr/bin/php
 <?php
 	$stdin = fopen("php://stdin", "r");
-	while ($stdin && !feof($stdin)) {
+	while ($stdin && !feof($stdin))
+	{
 		echo "Enter a number: ";
 		$number = fgets($stdin);
-		if ($number) {
+		if ($number)
+		{
 			$number = str_replace("\n", "", "$number");
-			if (is_numeric($number)) {
+			if (is_numeric($number))
+			{
 				if ($number % 2 == 0)
 					echo "The number " . $number . " is even\n";
 				else
