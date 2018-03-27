@@ -2,17 +2,17 @@
 <?php
 	$stdin = fopen("php://stdin", "r");
 	while ($stdin && !feof($stdin)) {
-		echo "Entrez un nombre: ";
+		echo "Enter a number: ";
 		$number = fgets($stdin);
 		if ($number) {
 			$number = str_replace("\n", "", "$number");
 			if (is_numeric($number)) {
 				if ($number % 2 == 0)
-					echo "Le chiffre " . $number . " est Pair\n";
+					echo "The number " . $number . " is even\n";
 				else
-					echo "Le chiffre " . $number . " est Impair\n";
+					echo "The number " . $number . " is odd\n";
 			} else
-				echo "'" . $number . "' n'est pas un chiffre\n";
+				echo "'" . $number . "' is not a number\n";
 		}
 	}
 	fclose($stdin);
