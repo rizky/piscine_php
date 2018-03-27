@@ -17,9 +17,9 @@
 	$argv[1] = str_replace("/", " / ", $argv[1]);
 	$argv[1] = str_replace("%", " % ", $argv[1]);
 	$strtab = ft_split($argv[1]);
-	if (count($strtab) > 3)
+	if (count($strtab) != 3)
 	{
-		echo "Incorrect Parameters\n";
+		echo "Syntax Error\n";
 		exit();
 	}
 	if (!is_numeric(trim($strtab[0])) || !is_numeric(trim($strtab[2])))
