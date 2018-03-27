@@ -6,6 +6,7 @@
 		$ret = array_values($ret);
 		return $ret;
 	}
+
 	if ($argc < 2)
 	{
         echo "Incorrect Parameters\n";
@@ -17,18 +18,8 @@
 	$argv[1] = str_replace("/", " / ", $argv[1]);
 	$argv[1] = str_replace("%", " % ", $argv[1]);
 	$strtab = ft_split($argv[1]);
-	if (count($strtab) != 3)
-	{
-		echo "Syntax Error\n";
-		exit();
-	}
-	if (!is_numeric(trim($strtab[0])) || !is_numeric(trim($strtab[2])))
-	{
-		echo "Syntax Error\n";
-		exit();
-	}
 	$ops = array("*", "+", "-", "/", "%");
-	if (!in_array(trim($strtab[1]), $ops))
+	if (count($strtab) != 3 || !is_numeric(trim($strtab[0])) || !is_numeric(trim($strtab[2])) || !in_array(trim($strtab[1]), $ops))
 	{
 		echo "Syntax Error\n";
 		exit();
