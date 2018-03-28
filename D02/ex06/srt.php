@@ -28,9 +28,7 @@
     foreach($array as $k=>$v){
 		if ($index != 1)
 			echo "\n";
-		echo $index."\n";
-		echo $k."\n";
-		echo $v."\n";
+		echo $index."\n".$k."\n".$v."\n";
 		$index++;
 	}
 ?>
