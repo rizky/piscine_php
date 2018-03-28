@@ -2,6 +2,10 @@
 	function ft_is_sort($tab)
 	{
 		$i = 0;
+		$min = 0;
+		$plus = 0;
+		if (count($tab) == 0)
+			return (-1);
 		while ($i < count($tab) - 1)
 		{
 			if ($tab[$i] < $tab[$i + 1])
