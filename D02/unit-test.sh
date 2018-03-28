@@ -12,11 +12,11 @@ Wrong Format
 ./one_more_time.php
 
 ex02
-cat > page.html
-./loupe.php page.html > new_page.html
+cat page.html
+./magnifying_glass.php page.html > new_page.html
 <html><head><title>Nice page</title></head>
-<body>Hello World <a href=http://cyan.com title="A LINK">THIS IS A LINK</a>
-<br /><a href=http://www.riven.com> AND THIS TOO <img src=wrong.image title="AND ALSO THIS"></a>
+<body>Hello World <a href=http://cyan.com title="UN LIEN">CECI EST UN LIEN</a>
+<br /><a href=http://www.riven.com> ET CA AUSSI <img src=wrong.image title="ET ENCORE CA"></a>
 </body></html>
 
 ex03
