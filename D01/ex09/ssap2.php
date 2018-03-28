@@ -3,6 +3,7 @@
 	function ft_split($str)
 	{
 		$ret = array_filter(explode(' ', $str));
+		$ret = array_values($ret);
 		return $ret;
 	}
 
