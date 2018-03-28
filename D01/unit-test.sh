@@ -47,14 +47,20 @@ $>
 
 $> ./ssap.php
 $> ./ssap.php foo bar
-bar foo
+bar
+foo
 $> ./ssap.php foo bar "yo man" "Here is my, two words" Xibul
 Here
-Xibul bar
-foo is
-man my,
-two words
-yo $>
+Xibul
+bar
+foo
+is
+man
+my,
+two
+words
+yo
+$>
 
 $> ./rostring.php
 $> ./rostring.php sdfkjsdkl sdkjfskljdf

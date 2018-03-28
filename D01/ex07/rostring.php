@@ -3,6 +3,7 @@
 	function ft_split($str)
 	{
 		$ret = array_filter(explode(' ', $str));
+		$ret = array_values($ret);
 		return $ret;
 	}
 
@@ -11,9 +12,10 @@
 	$strtab = ft_split($argv[1]);
 	array_push($strtab, $strtab[0]);
 	unset($strtab[0]);
+	$strtab = array_values($strtab);
 	foreach($strtab as $key=>$str)
 	{
-		if ($key != 1)
+		if ($key != 0)
 			echo " ";
 		echo $str;
 	}
