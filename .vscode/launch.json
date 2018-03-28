@@ -17,7 +17,7 @@
 			"program": "${file}",
 			"cwd": "${fileDirname}",
 			"args": [
-				"5*5"
+				"Mardi       12        Novembre  2013     12:02:21"
 			],
 			"port": 9000
 		}

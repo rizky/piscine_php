@@ -1,5 +1,11 @@
 #!/usr/bin/php
 <?php
+	function ft_split($str)
+	{
+		$ret = array_filter(explode(' ', $str));
+		$ret = array_values($ret);
+		return $ret;
+	}
     date_default_timezone_set('Europe/Paris');
 
     $month = array(
@@ -28,7 +34,7 @@
     if ($argc < 2)
         exit();
 
-    $date = explode(" ", $argv[1]);
+	$date = ft_split($argv[1]);
     if (count($date) != 5 ||
         preg_match("/^[1-9]$|0[1-9]|[1-2][0-9]|3[0-1]$/", $date[1], $date[1]) === 0 ||
         preg_match("/^[0-9]{4}$/", $date[3], $date[3]) === 0 ||
