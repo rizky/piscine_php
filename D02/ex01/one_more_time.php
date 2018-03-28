@@ -52,7 +52,7 @@
     }
 
     $time = mktime($date[4][1], $date[4][2], $date[4][3], $date[2], $date[1][0], $date[3][0]);
-    if (date( "N", $time) == $date[0])
+    if (date("N", $time) == $date[0])
         echo $time."\n";
     else
         echo "Wrong Format\n";
