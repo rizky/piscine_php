@@ -83,7 +83,7 @@ XXX
 1948372
 4234
 ##
-_hop $>
+_hop
 
 ./do_op.php
 Incorrect Parameters
