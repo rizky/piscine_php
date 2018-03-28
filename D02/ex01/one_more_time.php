@@ -43,8 +43,8 @@
         echo "Wrong Format\n";
         exit();
     }
-    $date[0] = array_search(lcfirst($date[0]), $week);
-    $date[2] = array_search(lcfirst($date[2]), $month);
+    $date[0] = array_search(strtolower($date[0]), $week);
+    $date[2] = array_search(strtolower($date[2]), $month);
 	if ($date[0] === false || $date[2] === false)
 	{
         echo "Wrong Format\n";
