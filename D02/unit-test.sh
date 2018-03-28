@@ -28,7 +28,7 @@ ex04
 
 ex05
 ./denial.php data.csv pseudo
-Enter your command: echo $name['miawallace']."\n";
+Enter your command: echo $nom['miawallace']."\n";
 Naline
 Enter your command: ^D
 ./denial.php data.csv
