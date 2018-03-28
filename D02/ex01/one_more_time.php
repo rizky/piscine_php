@@ -38,13 +38,15 @@
     if (count($date) != 5 ||
         preg_match("/^[1-9]$|0[1-9]|[1-2][0-9]|3[0-1]$/", $date[1], $date[1]) === 0 ||
         preg_match("/^[0-9]{4}$/", $date[3], $date[3]) === 0 ||
-        preg_match("/^([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $date[4], $date[4]) === 0) {
+		preg_match("/^([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $date[4], $date[4]) === 0)
+	{
         echo "Wrong Format\n";
         exit();
     }
     $date[0] = array_search(lcfirst($date[0]), $week);
     $date[2] = array_search(lcfirst($date[2]), $month);
-    if ($date[0] === false || $date[2] === false){
+	if ($date[0] === false || $date[2] === false)
+	{
         echo "Wrong Format\n";
         exit();
     }
