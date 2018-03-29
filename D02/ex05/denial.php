@@ -19,9 +19,11 @@
     if ($index === false)
         exit();
 
-    foreach ($header as $header_k => $header_v){
+	foreach ($header as $header_k => $header_v)
+	{
         $tmp = array();
-        foreach ($array as $v) {
+		foreach ($array as $v)
+		{
             if (isset($v[$index]))
                 $tmp[trim($v[$index])] = trim($v[$header_k]);
         }
@@ -29,10 +31,12 @@
     }
 
     $stdin = fopen("php://stdin", "r");
-    while ($stdin && !feof($stdin)) {
+	while ($stdin && !feof($stdin))
+	{
         echo "Enter your command: ";
         $order = fgets($stdin);
-        if ($order) {
+		if ($order)
+		{
             eval($order);
         }
     }

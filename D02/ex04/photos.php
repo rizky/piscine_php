@@ -61,9 +61,9 @@
 
     if ($argc < 1)
         exit();
-
     $html = getHtml($argv[1]);
-    if (!empty($html)){
+	if (!empty($html))
+	{
         $imgs = getImgs($html, $argv[1]);
         $folder = createFolder($argv[1]);
         downloadImg($imgs, $folder);
