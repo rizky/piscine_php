@@ -17,7 +17,7 @@
 			"program": "${file}",
 			"cwd": "${fileDirname}",
 			"args": [
-				"page.html"
+				"test.srt"
 			],
 			"port": 9000
 		}
