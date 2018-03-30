@@ -21,15 +21,15 @@
             fclose($fp);
         }
 		echo
-		`<html>
+		'<html>
 			<head>
-				<script langage="javascript">top.frames['chat'].location = 'chat.php';</script>
+				<script langage="javascript">top.frames["chat"].location = "chat.php";</script>
 			</head>
 			<body>
 				<form action="speak.php" method="POST">
 					<input type="text" name="msg" value=""/><input type="submit" name="submit" value="Send"/>
 				</form>
 			</body>
-		</html>`;
+		</html>';
 	}
 ?>

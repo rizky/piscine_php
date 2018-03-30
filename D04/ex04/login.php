@@ -1,10 +1,10 @@
 <?php
     require_once('auth.php');
     session_start();
-	if ($_GET['login'] && $_GET['passwd'] && auth($_GET['login'], $_GET['passwd']))
+	if ($_POST['login'] && $_POST['passwd'] && auth($_POST['login'], $_POST['passwd']))
 	{
-        $_SESSION['loggued_on_user'] = $_GET['login'];
-		echo `
+        $_SESSION['loggued_on_user'] = $_POST['login'];
+		echo '
         <!DOCTYPE html>
         <html>
 			<head>
@@ -16,7 +16,7 @@
 				<iframe name="speak" src="speak.php" width="100%" height="50px"></iframe>
 			</body>
         </html>
-       `;
+       ';
 	}
 	else
 	{
