@@ -11,3 +11,10 @@ curl -d login=x -d passwd=21 -d submit=OK 'http://localhost/ex01/create.php'
 curl -d login=x -d oldpw=21 -d newpw=42 -d submit=OK 'http://localhost/ex02/modif.php'
 curl -d login=x -d oldpw=21 -d newpw=42 -d submit=OK 'http://localhost/ex02/modif.php'
 curl -d login=x -d oldpw=42 -d newpw=21 -d submit=OK 'http://localhost/ex02/modif.php'
+
+
+curl -d login=toto -d passwd=titi -d submit=OK 'http://localhost/ex01/create.php'
+curl -c cook.txt 'http://localhost/ex03/login.php?login=toto&passwd=titi'
+curl -b cook.txt 'http://localhost/ex03/whoami.php'
+curl -b cook.txt 'http://localhost/ex03/logout.php'
+curl -b cook.txt 'http://localhost/ex03/whoami.php'
