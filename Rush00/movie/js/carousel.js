@@ -1,3 +1,30 @@
+function hideNextSiblings(el) {
+	i = 0;
+    while (el= el.nextElementSibling) {
+		el.className = '';
+		if (i == 0)
+			el.classList.add('next');
+		else if (i == 1)
+			el.classList.add('nextRightSecond');
+		else
+			el.classList.add('hideRight');
+		i++;
+	}
+}
+function hidePrevSiblings(el) {
+	i = 0;
+    while (el= el.previousElementSibling) {
+		el.className = '';
+		if (i == 0)
+			el.classList.add('prev');
+		else if (i == 1)
+			el.classList.add('prevLeftSecond');
+		else
+			el.classList.add('hideLeft');
+		i++;
+	}
+}
+
 function moveToSelected(element) {
 	if (element == "next") {
 		var selected = document.querySelectorAll(".selected").nextElementSibling;
@@ -6,20 +33,8 @@ function moveToSelected(element) {
 	} else {
 		var selected = element;
 	}
-	var next = selected.nextElementSibling;
-	var prev = selected.previousElementSibling;
-	var prevSecond = prev.previousElementSibling;
-	var nextSecond = next.nextElementSibling;
 	selected.className = '';
 	selected.classList.add('selected');
-	prev.className = '';
-	$(prev).addClass("prev");
-	next.className = '';
-	$(next).addClass("next");
-	$(nextSecond).removeClass().addClass("nextRightSecond");
-	$(prevSecond).removeClass().addClass("prevLeftSecond");
-
-
-	$(nextSecond).nextAll().removeClass().addClass('hideRight');
-	$(prevSecond).prevAll().removeClass().addClass('hideLeft');
+	hideNextSiblings(selected);
+	hidePrevSiblings(selected);
 }
