@@ -1,7 +1,6 @@
 .wrapper {
     height: 100vh;
     display: flex;
-
 	flex-direction: column;
 }
 header, footer {
@@ -10,6 +9,8 @@ header, footer {
 main {
 	flex: 1;
 	display: flex;
+}
+main.landing {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;

@@ -28,7 +28,7 @@
     $basket = unserialize($_SESSION['basketMovie']);
 ?>
 <html lang="en">
-	<?php $page_name="Home"; include('component/header.php'); ?>
+	<?php $page_name="Cart"; include('component/header.php'); ?>
 	<body class="wrapper">
 		<?php include('component/nav.php'); ?>
 		<main>

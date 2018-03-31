@@ -6,7 +6,7 @@ services:
     environment:
       - ALLOW_OVERRIDE=true
     ports:
-      - "80:80"
+      - "81:80"
     links:
       - db
     volumes:
@@ -20,5 +20,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - "3306:3306"
+      - "3301:3306"
   #docker-compose up

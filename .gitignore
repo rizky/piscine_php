@@ -1,2 +1,5 @@
 *.DS_Store
 Rush00/movie/mysql/*
+Rush00/project/mysql/ibtmp1
+Rush00/project/mysql/ibdata1
+Rush00/project/mysql/ib_logfile0

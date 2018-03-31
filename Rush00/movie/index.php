@@ -4,7 +4,7 @@
 	<?php $page_name="Home"; include('component/header.php'); ?>
 	<body class="wrapper">
 		<?php include('component/nav.php'); ?>
-		<main>
+		<main class="landing">
 		<div id="carousel">
 			<div class="hideLeft" onclick="moveToSelected(this)">
 				<img src="https://s16.postimg.org/vklrwoxtx/cover9.jpg">

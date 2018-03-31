@@ -1,0 +1,27 @@
+main.browse {  
+	padding-top: 40px;
+	justify-content: center;
+}
+.browse .filter {
+    flex: 30%;
+    background-color: white;
+    padding: 20px;
+}
+.browse .movies {
+    flex: 70%;
+    background-color: white;
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+.browse .movies .movie {
+	width: 200px;
+	height: 300px;
+	margin: 20px;
+}
+@media screen and (max-width: 700px) {
+    main.browse {   
+        flex-direction: column;
+    }
+}
