@@ -1,10 +1,11 @@
 main.browse {  
-	padding-top: 40px;
+	padding-top: 60px;
 	justify-content: center;
+	padding-bottom: 5px;
 }
 .browse .filter {
     flex: 30%;
-    background-color: white;
+    background-color: #cae4f7;
     padding: 20px;
 }
 .browse .movies {
@@ -19,6 +20,33 @@ main.browse {
 	width: 200px;
 	height: 300px;
 	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+}
+.browse .movies .movie a {
+	text-decoration: none;
+}
+.browse .movies .movie .title {
+	background-color: black;
+	margin-top: auto;
+	color: white;
+	height: 40px;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+.browse .movies .movie .price {
+	background-color: black;
+	margin-bottom: auto;
+	color: white;
+	height: 40px;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	width: 100%;
 }
 @media screen and (max-width: 700px) {
     main.browse {   

@@ -31,8 +31,7 @@
 	<?php $page_name="Cart"; include('component/header.php'); ?>
 	<body class="wrapper">
 		<?php include('component/nav.php'); ?>
-		<main>
-		<div class="container">
+		<main class="cart">
 			<h1 style="text-align: left">My Cart</h1>
 			<?php
 			if ($basket) {
@@ -101,7 +100,6 @@
 				echo "<h4>Your cart is empty</h4>";
 			}
 			?>
-		</div>
 		</div>
 		</main>
 		<?php include('component/footer.php'); ?>

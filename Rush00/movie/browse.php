@@ -14,9 +14,9 @@
 			<div class="filter">
 				<h2>Filter</h2>
 				<form action="">
-					<input type="text" name="name" value="<?php echo isset($_GET['name']) ? $_GET['name'] : '' ; ?>" placeholder="Nom du film">
-					<input type="number" name="min" value="<?php echo isset($_GET['min']) ? $_GET['min'] : '' ; ?>" placeholder="Prix minimum" style="width:49%;">
-					<input type="number" name="max" value="<?php echo isset($_GET['max']) ? $_GET['max'] : '' ; ?>" placeholder="Prix maximum" style="width:49%;">
+					<input type="text" name="name" value="<?php echo isset($_GET['name']) ? $_GET['name'] : '' ; ?>" placeholder="Film Name">
+					<input type="number" name="min" value="<?php echo isset($_GET['min']) ? $_GET['min'] : '' ; ?>" placeholder="Minimum Price" style="width:49%;">
+					<input type="number" name="max" value="<?php echo isset($_GET['max']) ? $_GET['max'] : '' ; ?>" placeholder="Maximum Price" style="width:49%;">
 					<input type="hidden" name="cat" value="<?php echo $_GET['cat']; ?>">
 					<button type="submit" class="btn btn-default">Search</button>
 				</form>
@@ -46,9 +46,6 @@
 					<a href="movie.php?id=<?php echo $v['id']; ?>">
 						<div class="movie"
 							style="background-image: url('http://image.tmdb.org/t/p/w185/<?php echo $v['picture']; ?>')">
-							<div class="price">
-								<div id="burst-12"></div>
-							</div>
 							<div class="price"><?php echo number_format($v['price'], 2); ?> ‎€</div>
 							<div class="title"><?php echo $v['name']; ?></div>
 						</div>
