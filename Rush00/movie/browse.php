@@ -5,6 +5,7 @@
     $categories = category_get_all();
     $movie = product_get_filtre($_GET['cat'], (float)$_GET['min'], (float)$_GET['max'], $_GET['name']);
 ?>
+<!DOCTYPE html>
 <html lang="en">
 	<?php $page_name="Home"; include('component/header.php'); ?>
 	<body class="wrapper">
