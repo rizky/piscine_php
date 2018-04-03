@@ -1,9 +1,9 @@
 SELECT
-	titre,
-	resum
+	title,
+	summary
 FROM
-	film
+	movies
 WHERE
-	resum LIKE '%vincent%'
+	summary LIKE '%vincent%'
 ORDER BY
 	id_film;
