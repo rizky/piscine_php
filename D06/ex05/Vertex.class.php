@@ -1,5 +1,4 @@
 <?php
-
     require_once 'Color.class.php';
 
     class Vertex
@@ -11,23 +10,23 @@
         private $_color;
         static $verbose = false;
 
-        public function __construct($xyzc)
+        public function __construct($args)
         {
-            $this->_x = $xyzc['x'];
-            $this->_y = $xyzc['y'];
-            $this->_z = $xyzc['z'];
-            if (isset($xyzc['w']) && !empty($xyzc['w']))
-                $this->_w = $xyzc['w'];
-            if (isset($xyzc['color']) && !empty($xyzc['color']) && $xyzc['color'] instanceof Color) {
-                $this->_color = $xyzc['color'];
+            $this->_x = $args['x'];
+            $this->_y = $args['y'];
+            $this->_z = $args['z'];
+            if (array_key_exists('w', $args) && !empty($args['w']))
+                $this->_w = $args['w'];
+            if (array_key_exists('color', $args) && !empty($args['color']) && $args['color'] instanceof Color) {
+                $this->_color = $args['color'];
             } else {
                 $this->_color = new Color(array('red' => 255, 'green' => 255, 'blue' => 255));
             }
             if (Self::$verbose)
-                printf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f, Color( red: %3d, green: %3d, blue: %3d ) ) constructed\n", $this->_x, $this->_y, $this->_z, $this->_w, $this->_color->red, $this->_color->green, $this->_color->blue);
-        }
-
-        public function opposite()
+				print("$this constructed" . PHP_EOL);
+		}
+		
+		public function opposite()
         {
             return new Vector(array('dest' => new Vertex(array('x' => $this->_x * -1, 'y' => $this->_y * -1, 'z' => $this->_z * -1))));
         }
@@ -35,7 +34,7 @@
         function __destruct()
         {
             if (Self::$verbose)
-                printf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f, Color( red: %3d, green: %3d, blue: %3d ) ) destructed\n", $this->_x, $this->_y, $this->_z, $this->_w, $this->_color->red, $this->_color->green, $this->_color->blue);
+				print("$this destructed" . PHP_EOL);
         }
 
         function __toString()
@@ -44,14 +43,10 @@
                 return (vsprintf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f, Color( red: %3d, green: %3d, blue: %3d ) )", array($this->_x, $this->_y, $this->_z, $this->_w, $this->_color->red, $this->_color->green, $this->_color->blue)));
             return (vsprintf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f )", array($this->_x, $this->_y, $this->_z, $this->_w)));
         }
-
-        public static function doc()
+		
+		public static function doc()
         {
-            $read = fopen("Vertex.doc.txt", 'r');
-            echo "\n";
-            while ($read && !feof($read))
-                echo fgets($read);
-            echo "\n";
+			return ("\n" . file_get_contents("Vertex.doc.txt") . PHP_EOL);
         }
 
         public function getX()
@@ -103,4 +98,5 @@
         {
             $this->_color = $color;
         }
-           }
+	}
+?>

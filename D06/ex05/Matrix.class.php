@@ -173,9 +173,9 @@
             $matrice = new Matrix();
             $matrice->matrix = $tmp;
             return $matrice;
-        }
-
-        public function opposite(){
+		}
+		
+		public function opposite(){
             print_r($this->matrix);
             $tmp = array();
             $tmp[0] = $this->matrix[0];
@@ -212,7 +212,7 @@
             return $vertex;
         }
 
-        public function transformMesh($mesh){
+		public function transformMesh($mesh){
             $result = array();
             foreach($mesh as $k => $triangle) {
                 $result[$k][0] = $this->transformVertex($triangle->getA());
@@ -220,8 +220,8 @@
                 $result[$k][2] = $this->transformVertex($triangle->getC());
             }
             return $result;
-        }
-
+		}
+		
         function __destruct()
         {
             if (Self::$verbose)
@@ -241,10 +241,6 @@
 
         public static function doc()
         {
-            $read = fopen("Matrix.doc.txt", 'r');
-            echo "\n";
-            while ($read && !feof($read))
-                echo fgets($read);
-            echo "\n";
+			return ("\n" . file_get_contents("Matrix.doc.txt") . PHP_EOL);
         }
     }

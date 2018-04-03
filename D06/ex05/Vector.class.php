@@ -91,11 +91,7 @@
 
         public static function doc()
         {
-            $read = fopen("Vector.doc.txt", 'r');
-            echo "\n";
-            while ($read && !feof($read))
-                echo fgets($read);
-            echo "\n";
+			return ("\n" . file_get_contents("Vector.doc.txt") . PHP_EOL);
         }
 
         public function getX()

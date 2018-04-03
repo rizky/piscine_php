@@ -33,11 +33,7 @@
 
         public static function doc()
         {
-            $read = fopen("Triangle.doc.txt", 'r');
-            echo "\n";
-            while ($read && !feof($read))
-                echo fgets($read);
-            echo "\n";
+			return ("\n" . file_get_contents("Triangle.doc.txt") . PHP_EOL);
         }
 
         public function getA()

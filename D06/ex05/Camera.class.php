@@ -14,9 +14,9 @@
         public function __construct($array)
         {
             $this->_origine = $array['origin'];
-            $this->_tT = new Matrix(array('preset' => Matrix::TRANSLATION, 'vtc' => $this->_origine->opposite()));
-
-            $this->_tR = $array['orientation'];
+			$this->_tT = new Matrix(array('preset' => Matrix::TRANSLATION, 'vtc' => $this->_origine->opposite()));
+			
+			$this->_tR = $array['orientation'];
             $this->_tR = $this->_tR->opposite();
             $this->_tR = $this->_tR->mult($this->_tT);
             $this->_width = (float)$array['width'] / 2;
@@ -40,8 +40,8 @@
             $vtx->setY($vtx->getY());
             $vtx->setColor($worldVertex->getColor());
             return ($vtx);
-        }
-
+		}
+		
         public function watchMesh($mesh){
             foreach($mesh as $k => $triangle) {
                 $a = $this->watchVertex($triangle[0]);
@@ -92,10 +92,6 @@
 
         public static function doc()
         {
-            $read = fopen("Camera.doc.txt", 'r');
-            echo "\n";
-            while ($read && !feof($read))
-                echo fgets($read);
-            echo "\n";
+            return ("\n" . file_get_contents("Camera.doc.txt") . PHP_EOL);
         }
     }

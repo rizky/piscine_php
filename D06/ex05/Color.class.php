@@ -1,5 +1,4 @@
 <?php
-
     class Color
     {
         public $red;
@@ -7,41 +6,58 @@
         public $blue;
         static $verbose = false;
 
-        public function __construct($color)
+        public function __construct(array $args)
         {
-            if (isset($color['red']) && isset($color['green']) && isset($color['blue'])) {
-                $this->red = intval($color['red']);
-                $this->green = intval($color['green']);
-                $this->blue = intval($color['blue']);
-            } else if (isset($color['rgb'])) {
-                $rgb = intval($color["rgb"]);
-                $this->red = $rgb / 65281 % 256;
-                $this->green = $rgb / 256 % 256;
-                $this->blue = $rgb % 256;
+			if (array_key_exists('red', $args) &&
+				array_key_exists('green', $args) &&
+				array_key_exists('blue', $args))
+			{
+                $this->red = intval($args['red']);
+                $this->green = intval($args['green']);
+                $this->blue = intval($args['blue']);
+			}
+			else if (array_key_exists('rgb', $args))
+			{
+                $rgb = intval($args['rgb']);
+				$this->red = ($args['rgb'] >> 16) % 256;
+				$this->green = ($args['rgb'] >> 8) % 256;
+				$this->blue = $args['rgb'] % 256;
             }
-            if (Self::$verbose)
-                printf("Color( red: %3d, green: %3d, blue: %3d ) constructed.\n", $this->red, $this->green, $this->blue);
+			if (Self::$verbose)
+				print("$this constructed." . PHP_EOL);
         }
 
         function __destruct()
         {
-            if (Self::$verbose)
-                printf("Color( red: %3d, green: %3d, blue: %3d ) destructed.\n", $this->red, $this->green, $this->blue);
+			if (Self::$verbose)
+				print("$this destructed." . PHP_EOL);
         }
 
         public function add($Color)
         {
-            return (new Color(array('red' => $this->red + $Color->red, 'green' => $this->green + $Color->green, 'blue' => $this->blue + $Color->blue)));
+			return (new Color(array(
+				'red' => $this->red + $Color->red,
+				'green' => $this->green + $Color->green,
+				'blue' => $this->blue + $Color->blue
+			)));
         }
 
         public function sub($Color)
         {
-            return (new Color(array('red' => $this->red - $Color->red, 'green' => $this->green - $Color->green, 'blue' => $this->blue - $Color->blue)));
+            return (new Color(array(
+				'red' => $this->red - $Color->red,
+				'green' => $this->green - $Color->green,
+				'blue' => $this->blue - $Color->blue
+			)));
         }
 
         public function mult($mult)
         {
-            return (new Color(array('red' => $this->red * $mult, 'green' => $this->green * $mult, 'blue' => $this->blue * $mult)));
+            return (new Color(array(
+				'red' => $this->red * $mult,
+				'green' => $this->green * $mult,
+				'blue' => $this->blue * $mult
+			)));
         }
 
         function __toString()
@@ -51,11 +67,7 @@
 
         public static function doc()
         {
-            $read = fopen("Color.doc.txt", 'r');
-            echo "\n";
-            while ($read && !feof($read))
-                echo fgets($read);
-            echo "\n";
+			return ("\n" . file_get_contents("Color.doc.txt") . PHP_EOL);
         }
-
-    }
+	}
+?>
