@@ -1,11 +1,11 @@
 INSERT INTO 
-	ft_table (login, groupe, date_de_creation)
+	ft_table (login, group, creation_date)
 SELECT
-	nom,
+	last_name,
 	'other',
-	date_naissance
+	birthdate
 FROM 
-	fiche_personne
+	user_card
 WHERE
 	nom LIKE '%a%' AND LENGTH(nom) < 9
 ORDER BY
