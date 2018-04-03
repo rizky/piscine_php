@@ -1,10 +1,10 @@
 SELECT
-	nom,
-	prenom,
-	DATE(date_naissance) AS 'date de naissance'
+	last_name,
+	first_name,
+	DATE(birthdate) AS 'birthdate'
 FROM
-	fiche_personne
+	user_card
 WHERE
-	YEAR(date_naissance) = '1989'
+	YEAR(birthdate) = '1989'
 ORDER BY
-	nom;
+	last_name;

@@ -1,6 +1,6 @@
 SELECT
-	COUNT(*) AS 'nb_court-metrage'
+	COUNT(*) AS 'nb_short-films'
 FROM
 	film
 WHERE
-	duree_min <= 42;
+	duration <= 42;

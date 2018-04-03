@@ -1,5 +1,5 @@
 INSERT INTO 
-	ft_table (login, group, creation_date)
+	ft_table (login, ft_table.group, creation_date)
 VALUES
 	('loki', 'staff', '2013-05-01'),
 	('scadoux', 'student', '2014-01-01'),

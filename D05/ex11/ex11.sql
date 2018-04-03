@@ -1,15 +1,15 @@
 SELECT
-	UPPER(fiche_personne.nom) AS 'NOM',
-	prenom,
-	prix
+	UPPER(user_card.last_name) AS 'NAME',
+	first_name,
+	price
 FROM
-	membre
+	member
 INNER JOIN
-	fiche_personne ON membre.id_fiche_perso = fiche_personne.id_perso
+	user_card ON member.id_user_card = user_card.id_user
 INNER JOIN
-	abonnement ON membre.id_abo = abonnement.id_abo
+	subscription ON member.id_sub = subscription.id_sub
 WHERE
-	prix > 42
+	price > 42
 ORDER BY
-	fiche_personne.nom,
-	prenom;
+	user_card.last_name,
+	first_name;

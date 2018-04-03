@@ -2,7 +2,7 @@ SELECT
 	title,
 	summary
 FROM
-	movies
+	film
 WHERE
 	summary LIKE '%vincent%'
 ORDER BY
