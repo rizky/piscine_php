@@ -1,9 +1,9 @@
 SELECT
-	etage_salle AS 'etage',
-	SUM(nbr_siege) AS 'sieges'
+	floor_number AS 'floor',
+	SUM(nb_seats) AS 'seats'
 FROM
-	salle
+	cinema
 GROUP BY
-	etage_salle
+	floor_number
 ORDER BY
-	SUM(nbr_siege) DESC;
+	SUM(nb_seats) DESC;

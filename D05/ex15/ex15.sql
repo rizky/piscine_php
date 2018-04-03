@@ -1,6 +1,6 @@
 SELECT
-	REVERSE(SUBSTR(telephone, 2)) AS 'enohpelet'
+	REVERSE(SUBSTR(phone_number, 2)) AS 'rebmunenohp'
 FROM
 	distrib
 WHERE
-	telephone LIKE '05%';
+	phone_number LIKE '05%';

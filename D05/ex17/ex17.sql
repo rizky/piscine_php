@@ -1,6 +1,6 @@
 SELECT
-	COUNT(*) AS 'nb_abo',
-	FLOOR(AVG(prix)) AS 'moy_abo',
-	SUM(duree_abo) % 42 AS 'ft'
+	COUNT(*) AS 'nb_susc',
+	FLOOR(AVG(price)) AS 'av_susc',
+	SUM(duration_sub) % 42 AS 'ft'
 FROM
-	abonnement;
+	subscription;

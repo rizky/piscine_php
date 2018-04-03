@@ -1,11 +1,11 @@
 SELECT
-	nom,
-	prenom
+	last_name,
+	first_name
 FROM
-	fiche_personne
+	user_card
 WHERE
-	nom LIKE '%-%'
-	OR prenom LIKE '%-%'
+	last_name LIKE '%-%'
+	OR first_name LIKE '%-%'
 ORDER BY
-	nom,
-	prenom;
+	last_name,
+	first_name;

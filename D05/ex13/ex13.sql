@@ -1,4 +1,4 @@
 SELECT
-	round(AVG(nbr_siege), 0) AS 'moyenne'
+	round(AVG(nb_seats), 0) AS 'average'
 FROM
-	salle;
+	cinema;
