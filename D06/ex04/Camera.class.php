@@ -79,10 +79,6 @@
 
         public static function doc()
         {
-            $read = fopen("Camera.doc.txt", 'r');
-            echo "\n";
-            while ($read && !feof($read))
-                echo fgets($read);
-            echo "\n";
+            return ("\n" . file_get_contents("Camera.doc.txt") . PHP_EOL);
         }
     }

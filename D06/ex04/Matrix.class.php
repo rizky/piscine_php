@@ -10,7 +10,7 @@
         const TRANSLATION = "TRANSLATION";
         const PROJECTION = "PROJECTION";
 
-        public $matrix = array();
+        protected $matrix = array();
         private $_preset;
         private $_scale;
         private $_angle;
@@ -206,10 +206,6 @@
 
         public static function doc()
         {
-            $read = fopen("Matrix.doc.txt", 'r');
-            echo "\n";
-            while ($read && !feof($read))
-                echo fgets($read);
-            echo "\n";
+			return ("\n" . file_get_contents("Matrix.doc.txt") . PHP_EOL);
         }
     }

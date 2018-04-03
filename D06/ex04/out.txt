@@ -16,36 +16,5 @@ Only one method is implemented :
 - watchVertex: This method need a vertex in argument, the one wich is to be projected,
 and return the corresponding new vertex in the camera coordinate.
 ---------------------------------------------------------------------- Camera ->
-Camera instance constructed
-Camera( 
-+ Origine: Vertex( x: 20.00, y: 20.00, z:80.00, w:1.00 )
-+ tT:
-M | vtcX | vtcY | vtcZ | vtxO
------------------------------
-x | 1.00 | 0.00 | 0.00 | -20.00
-y | 0.00 | 1.00 | 0.00 | -20.00
-z | 0.00 | 0.00 | 1.00 | -80.00
-w | 0.00 | 0.00 | 0.00 | 1.00
-+ tR:
-M | vtcX | vtcY | vtcZ | vtxO
------------------------------
-x | -1.00 | 0.00 | -0.00 | 0.00
-y | 0.00 | 1.00 | 0.00 | 0.00
-z | 0.00 | 0.00 | -1.00 | 0.00
-w | 0.00 | 0.00 | 0.00 | 1.00
-+ tR->mult( tT ):
-M | vtcX | vtcY | vtcZ | vtxO
------------------------------
-x | -1.00 | 0.00 | -0.00 | 20.00
-y | 0.00 | 1.00 | 0.00 | -20.00
-z | 0.00 | 0.00 | -1.00 | 80.00
-w | 0.00 | 0.00 | 0.00 | 1.00
-+ Proj:
-M | vtcX | vtcY | vtcZ | vtxO
------------------------------
-x | 1.30 | 0.00 | 0.00 | 0.00
-y | 0.00 | 1.73 | 0.00 | 0.00
-z | 0.00 | 0.00 | -1.02 | -2.02
-w | 0.00 | 0.00 | -1.00 | 0.00
-)
-Camera instance destructed
+
+Fatal error: Call to undefined method Vertex::opposite() in /Users/rnugroho/Documents/Codes/42/piscine_php/workspace/D06/ex04/Camera.class.php on line 17
