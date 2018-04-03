@@ -17,30 +17,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `abonnement`
+-- Table structure for table `subscription`
 --
 
-DROP TABLE IF EXISTS `abonnement`;
+DROP TABLE IF EXISTS `subscription`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `abonnement` (
-  `id_abo` int(11) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `resum` varchar(255) NOT NULL,
-  `prix` int(11) NOT NULL,
-  `duree_abo` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id_abo`)
+CREATE TABLE `subscription` (
+  `id_sub` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `summary` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  `duration_sub` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id_sub`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `abonnement`
+-- Dumping data for table `subscription`
 --
 
-LOCK TABLES `abonnement` WRITE;
-/*!40000 ALTER TABLE `abonnement` DISABLE KEYS */;
-INSERT INTO `abonnement` VALUES (0,'VIP','l mois tout compris',60,30),(1,'GOLD','l\'abo pour les grosses l33t qui ont plein de sous',500,127),(2,'Classic','abonnement mensuel classique illimite',40,30),(3,'pass day','pass valable une journee',15,1),(4,'malsch','Le pass du malsch parcequ\'il le vau bien',238,4);
-/*!40000 ALTER TABLE `abonnement` ENABLE KEYS */;
+LOCK TABLES `subscription` WRITE;
+/*!40000 ALTER TABLE `subscription` DISABLE KEYS */;
+INSERT INTO `subscription` VALUES (0,'VIP','l mois tout compris',60,30),(1,'GOLD','l\'abo pour les grosses l33t qui ont plein de sous',500,127),(2,'Classic','abonnement mensuel classique illimite',40,30),(3,'pass day','pass valable une journee',15,1),(4,'malsch','Le pass du malsch parcequ\'il le vau bien',238,4);
+/*!40000 ALTER TABLE `subscription` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -52,12 +52,12 @@ DROP TABLE IF EXISTS `distrib`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `distrib` (
   `id_distrib` int(11) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `telephone` varchar(255) NOT NULL,
-  `adresse` varchar(255) DEFAULT NULL,
-  `cpostal` varchar(255) DEFAULT NULL,
-  `ville` varchar(255) DEFAULT NULL,
-  `pays` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone_number` varchar(255) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `zipcode` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_distrib`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -73,34 +73,34 @@ INSERT INTO `distrib` VALUES (0,'gimages','0524509890',NULL,NULL,NULL,NULL),(1,'
 UNLOCK TABLES;
 
 --
--- Table structure for table `fiche_personne`
+-- Table structure for table `user_card`
 --
 
-DROP TABLE IF EXISTS `fiche_personne`;
+DROP TABLE IF EXISTS `user_card`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `fiche_personne` (
-  `id_perso` int(11) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `prenom` varchar(255) NOT NULL,
-  `date_naissance` datetime NOT NULL,
+CREATE TABLE `user_card` (
+  `id_user` int(11) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `birthdate` datetime NOT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `adresse` varchar(255) DEFAULT NULL,
-  `cpostal` varchar(255) DEFAULT NULL,
-  `ville` varchar(255) DEFAULT NULL,
-  `pays` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id_perso`)
+  `address` varchar(255) DEFAULT NULL,
+  `zipcode` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `fiche_personne`
+-- Dumping data for table `user_card`
 --
 
-LOCK TABLES `fiche_personne` WRITE;
-/*!40000 ALTER TABLE `fiche_personne` DISABLE KEYS */;
-INSERT INTO `fiche_personne` VALUES (25,'hennegrave','severin','1978-07-05 00:00:00','hennegrave.severin@machin.com',' ','14740','PUTOT EN BESSIN',NULL),(7,'glachant','guy','1935-01-27 00:00:00','glachant.guy@machin.com',' ','59274','MARQUILLIES',NULL),(26,'coulm','marwan','1934-11-16 00:00:00','coulm.marwan@machin.com',' ','06470','VILLENEUVE D ENTRAUNE',NULL),(27,'obriot','franck','1983-06-10 00:00:00','obriot.franck@machin.com',' ','01420','SURJOUX',NULL),(19,'bordoni','mikael','1980-10-19 00:00:00','bordoni.mikael@machin.com',' ','87140','THOURON',NULL),(1,'lienhart','quoc-quang','1935-04-15 00:00:00','lienhart.quoc-quang@machin.com',' ','03500','MONETAY SUR ALLIER',NULL),(30,'brinon','florestan','1974-05-09 00:00:00','brinon.florestan@machin.com',' ','36340','MAILLET',NULL),(24,'de-ponfilly','kamel','1933-06-14 00:00:00','de-ponfilly.kamel@machin.com',' ','25340','ANTEUIL',NULL),(4,'domingues','stephane','1944-01-03 00:00:00','domingues.stephane@machin.com',' ','32120','PUYCASQUIER',NULL),(16,'vaillier','kamel','1968-12-19 00:00:00','vaillier.kamel@machin.com',' ','61260','MALE',NULL),(17,'wetter','frederic-eugene','1987-07-24 00:00:00','wetter.frederic-eugene@machin.com',' ','36130','MONTIERCHAUME',NULL),(10,'schiff','arnaud','1985-05-03 00:00:00','schiff.arnaud@machin.com',' ','01260','VIEU',NULL),(11,'valet','jean-remi','1959-08-24 00:00:00','valet.jean-remi@machin.com',' ','14190','MAIZIERES',NULL),(13,'dupuy','marie','1949-08-07 00:00:00','dupuy.marie@machin.com',' ','71390','ST GERMAIN LES BUXY',NULL),(9,'verhaeghe','lilian','1974-03-13 00:00:00','verhaeghe.lilian@machin.com',' ','65100','LOUBAJAC',NULL),(23,'davoine-graziani','faouzi','1972-04-14 00:00:00','davoine-graziani.faouzi@machin.com',' ','33180','ST SEURIN DE CADOURNE',NULL),(21,'ruckebusch','abdesslam','1966-09-19 00:00:00','ruckebusch.abdesslam@machin.com',' ','57420','SECOURT',NULL),(15,'lamory','remi','1949-03-08 00:00:00','lamory.remi@machin.com',' ','45360','CHATILLON SUR LOIRE',NULL),(28,'fedorowicz','constantin','1976-09-27 00:00:00','fedorowicz.constantin@machin.com',' ','51220','CORMICY',NULL),(3,'belanyi','nikita','1932-11-11 00:00:00','belanyi.nikita@machin.com',' ','85110','SIGOURNAIS',NULL),(12,'renault','joel','1960-04-29 00:00:00','renault.joel@machin.com',' ','33350','CASTILLON LA BATAILLE',NULL),(8,'arbona','naji','1976-09-06 00:00:00','arbona.naji@machin.com',' ','32270','BLANQUEFORT',NULL),(29,'bouamar','ravi','1985-10-15 00:00:00','bouamar.ravi@machin.com',' ','60420','COIVREL',NULL),(18,'ait','gildas','1971-11-03 00:00:00','ait.gildas@machin.com',' ','56500','LOCMINE',NULL),(14,'michaux','anton','1943-05-26 00:00:00','michaux.anton@machin.com',' ','01370','TREFFORT CUISIAT',NULL),(20,'soulac','theo','1983-10-19 00:00:00','soulac.theo@machin.com',' ','49290','CHAUDEFONDS SUR LAYON',NULL),(5,'dang','bruno','1943-12-03 00:00:00','dang.bruno@machin.com',' ','09700','LA BASTIDE DE LORDAT',NULL),(6,'pelissier','anishley','1974-11-21 00:00:00','pelissier.anishley@machin.com',' ','88260','ESLEY',NULL),(22,'bouchakhchoukha','smael','1942-06-05 00:00:00','bouchakhchoukha.smael@machin.com',' ','02810','MARIGNY EN ORXOIS',NULL),(2,'finidori','matthew','1932-01-10 00:00:00','finidori.matthew@machin.com',' ','64420','ESLOURENTIES DABAN',NULL);
-/*!40000 ALTER TABLE `fiche_personne` ENABLE KEYS */;
+LOCK TABLES `user_card` WRITE;
+/*!40000 ALTER TABLE `user_card` DISABLE KEYS */;
+INSERT INTO `user_card` VALUES (25,'hennegrave','severin','1978-07-05 00:00:00','hennegrave.severin@machin.com',' ','14740','PUTOT EN BESSIN',NULL),(7,'glachant','guy','1935-01-27 00:00:00','glachant.guy@machin.com',' ','59274','MARQUILLIES',NULL),(26,'coulm','marwan','1934-11-16 00:00:00','coulm.marwan@machin.com',' ','06470','VILLENEUVE D ENTRAUNE',NULL),(27,'obriot','franck','1983-06-10 00:00:00','obriot.franck@machin.com',' ','01420','SURJOUX',NULL),(19,'bordoni','mikael','1980-10-19 00:00:00','bordoni.mikael@machin.com',' ','87140','THOURON',NULL),(1,'lienhart','quoc-quang','1935-04-15 00:00:00','lienhart.quoc-quang@machin.com',' ','03500','MONETAY SUR ALLIER',NULL),(30,'brinon','florestan','1974-05-09 00:00:00','brinon.florestan@machin.com',' ','36340','MAILLET',NULL),(24,'de-ponfilly','kamel','1933-06-14 00:00:00','de-ponfilly.kamel@machin.com',' ','25340','ANTEUIL',NULL),(4,'domingues','stephane','1944-01-03 00:00:00','domingues.stephane@machin.com',' ','32120','PUYCASQUIER',NULL),(16,'vaillier','kamel','1968-12-19 00:00:00','vaillier.kamel@machin.com',' ','61260','MALE',NULL),(17,'wetter','frederic-eugene','1987-07-24 00:00:00','wetter.frederic-eugene@machin.com',' ','36130','MONTIERCHAUME',NULL),(10,'schiff','arnaud','1985-05-03 00:00:00','schiff.arnaud@machin.com',' ','01260','VIEU',NULL),(11,'valet','jean-remi','1959-08-24 00:00:00','valet.jean-remi@machin.com',' ','14190','MAIZIERES',NULL),(13,'dupuy','marie','1949-08-07 00:00:00','dupuy.marie@machin.com',' ','71390','ST GERMAIN LES BUXY',NULL),(9,'verhaeghe','lilian','1974-03-13 00:00:00','verhaeghe.lilian@machin.com',' ','65100','LOUBAJAC',NULL),(23,'davoine-graziani','faouzi','1972-04-14 00:00:00','davoine-graziani.faouzi@machin.com',' ','33180','ST SEURIN DE CADOURNE',NULL),(21,'ruckebusch','abdesslam','1966-09-19 00:00:00','ruckebusch.abdesslam@machin.com',' ','57420','SECOURT',NULL),(15,'lamory','remi','1949-03-08 00:00:00','lamory.remi@machin.com',' ','45360','CHATILLON SUR LOIRE',NULL),(28,'fedorowicz','constantin','1976-09-27 00:00:00','fedorowicz.constantin@machin.com',' ','51220','CORMICY',NULL),(3,'belanyi','nikita','1932-11-11 00:00:00','belanyi.nikita@machin.com',' ','85110','SIGOURNAIS',NULL),(12,'renault','joel','1960-04-29 00:00:00','renault.joel@machin.com',' ','33350','CASTILLON LA BATAILLE',NULL),(8,'arbona','naji','1976-09-06 00:00:00','arbona.naji@machin.com',' ','32270','BLANQUEFORT',NULL),(29,'bouamar','ravi','1985-10-15 00:00:00','bouamar.ravi@machin.com',' ','60420','COIVREL',NULL),(18,'ait','gildas','1971-11-03 00:00:00','ait.gildas@machin.com',' ','56500','LOCMINE',NULL),(14,'michaux','anton','1943-05-26 00:00:00','michaux.anton@machin.com',' ','01370','TREFFORT CUISIAT',NULL),(20,'soulac','theo','1983-10-19 00:00:00','soulac.theo@machin.com',' ','49290','CHAUDEFONDS SUR LAYON',NULL),(5,'dang','bruno','1943-12-03 00:00:00','dang.bruno@machin.com',' ','09700','LA BASTIDE DE LORDAT',NULL),(6,'pelissier','anishley','1974-11-21 00:00:00','pelissier.anishley@machin.com',' ','88260','ESLEY',NULL),(22,'bouchakhchoukha','smael','1942-06-05 00:00:00','bouchakhchoukha.smael@machin.com',' ','02810','MARIGNY EN ORXOIS',NULL),(2,'finidori','matthew','1932-01-10 00:00:00','finidori.matthew@machin.com',' ','64420','ESLOURENTIES DABAN',NULL);
+/*!40000 ALTER TABLE `user_card` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -114,12 +114,12 @@ CREATE TABLE `film` (
   `id_film` int(11) NOT NULL,
   `id_genre` tinyint(4) DEFAULT NULL,
   `id_distrib` int(11) DEFAULT NULL,
-  `titre` varchar(255) NOT NULL,
-  `resum` varchar(255) NOT NULL,
-  `date_debut_affiche` date NOT NULL,
-  `date_fin_affiche` date NOT NULL,
-  `duree_min` int(11) NOT NULL,
-  `annee_prod` int(11) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `summary` varchar(255) NOT NULL,
+  `release_date` date NOT NULL,
+  `last_projection` date NOT NULL,
+  `duration` int(11) NOT NULL,
+  `prod_year` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_film`),
   KEY `id_genre` (`id_genre`),
   KEY `id_distrib` (`id_distrib`)
@@ -145,7 +145,7 @@ DROP TABLE IF EXISTS `genre`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `genre` (
   `id_genre` tinyint(4) NOT NULL,
-  `nom` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id_genre`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -161,56 +161,56 @@ INSERT INTO `genre` VALUES (0,'detective'),(1,'dramatic comedy'),(2,'science fic
 UNLOCK TABLES;
 
 --
--- Table structure for table `grille_programme`
+-- Table structure for table `program_grid`
 --
 
-DROP TABLE IF EXISTS `grille_programme`;
+DROP TABLE IF EXISTS `program_grid`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `grille_programme` (
+CREATE TABLE `program_grid` (
   `id_film` int(11) NOT NULL,
-  `id_salle` int(11) NOT NULL,
-  `id_fiche_perso_ouvreur` int(11) NOT NULL,
-  `id_fiche_perso_technicien` int(11) NOT NULL,
-  `id_fiche_perso_menage` int(11) NOT NULL,
-  `debut_sceance` datetime NOT NULL,
-  `fin_sceance` datetime NOT NULL
+  `id_room` int(11) NOT NULL,
+  `id_user_card_usher` int(11) NOT NULL,
+  `id_user_card_technician` int(11) NOT NULL,
+  `id_user_card_cleaning` int(11) NOT NULL,
+  `beginning_show` datetime NOT NULL,
+  `end_show` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `grille_programme`
+-- Dumping data for table `program_grid`
 --
 
-LOCK TABLES `grille_programme` WRITE;
-/*!40000 ALTER TABLE `grille_programme` DISABLE KEYS */;
-/*!40000 ALTER TABLE `grille_programme` ENABLE KEYS */;
+LOCK TABLES `program_grid` WRITE;
+/*!40000 ALTER TABLE `program_grid` DISABLE KEYS */;
+/*!40000 ALTER TABLE `program_grid` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `historique_membre`
+-- Table structure for table `member_history`
 --
 
-DROP TABLE IF EXISTS `historique_membre`;
+DROP TABLE IF EXISTS `member_history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `historique_membre` (
-  `id_membre` int(11) NOT NULL,
+CREATE TABLE `member_history` (
+  `id_member` int(11) NOT NULL,
   `id_film` int(11) NOT NULL,
   `date` datetime NOT NULL,
-  KEY `id_membre` (`id_membre`),
+  KEY `id_member` (`id_member`),
   KEY `id_film` (`id_film`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `historique_membre`
+-- Dumping data for table `member_history`
 --
 
-LOCK TABLES `historique_membre` WRITE;
-/*!40000 ALTER TABLE `historique_membre` DISABLE KEYS */;
-INSERT INTO `historique_membre` VALUES (14,378,'1999-03-01 00:00:00'),(14,395,'1999-03-12 00:00:00'),(14,381,'1999-03-03 00:00:00'),(14,380,'1999-02-24 00:00:00'),(14,397,'1999-05-03 00:00:00'),(14,382,'1999-02-06 00:00:00'),(14,387,'1999-02-16 00:00:00'),(18,391,'1999-04-06 00:00:00'),(18,343,'1998-12-24 00:00:00'),(18,375,'1999-02-19 00:00:00'),(18,376,'1999-02-07 00:00:00'),(18,374,'1999-01-28 00:00:00'),(20,290,'1998-09-22 00:00:00'),(20,389,'1999-03-17 00:00:00');
-/*!40000 ALTER TABLE `historique_membre` ENABLE KEYS */;
+LOCK TABLES `member_history` WRITE;
+/*!40000 ALTER TABLE `member_history` DISABLE KEYS */;
+INSERT INTO `member_history` VALUES (14,378,'1999-03-01 00:00:00'),(14,395,'1999-03-12 00:00:00'),(14,381,'1999-03-03 00:00:00'),(14,380,'1999-02-24 00:00:00'),(14,397,'1999-05-03 00:00:00'),(14,382,'1999-02-06 00:00:00'),(14,387,'1999-02-16 00:00:00'),(18,391,'1999-04-06 00:00:00'),(18,343,'1998-12-24 00:00:00'),(18,375,'1999-02-19 00:00:00'),(18,376,'1999-02-07 00:00:00'),(18,374,'1999-01-28 00:00:00'),(20,290,'1998-09-22 00:00:00'),(20,389,'1999-03-17 00:00:00');
+/*!40000 ALTER TABLE `member_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -222,9 +222,9 @@ DROP TABLE IF EXISTS `job`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `job` (
   `id_job` int(11) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `salaire` varchar(255) NOT NULL,
-  `cadre` tinyint(1) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `salary` varchar(255) NOT NULL,
+  `manager` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_job`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -239,113 +239,113 @@ LOCK TABLES `job` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `membre`
+-- Table structure for table `member`
 --
 
-DROP TABLE IF EXISTS `membre`;
+DROP TABLE IF EXISTS `member`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `membre` (
-  `id_membre` int(11) NOT NULL,
-  `id_fiche_perso` int(11) NOT NULL,
-  `id_abo` int(11) DEFAULT NULL,
-  `date_abo` datetime DEFAULT NULL,
-  `id_dernier_film` int(11) NOT NULL,
-  `date_dernier_film` datetime DEFAULT NULL,
-  `date_inscription` datetime DEFAULT NULL,
-  PRIMARY KEY (`id_membre`),
-  KEY `id_abo` (`id_abo`)
+CREATE TABLE `member` (
+  `id_member` int(11) NOT NULL,
+  `id_user_card` int(11) NOT NULL,
+  `id_sub` int(11) DEFAULT NULL,
+  `date_sub` datetime DEFAULT NULL,
+  `id_last_film` int(11) NOT NULL,
+  `date_last_film` datetime DEFAULT NULL,
+  `date_subscription` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_member`),
+  KEY `id_sub` (`id_sub`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `membre`
+-- Dumping data for table `member`
 --
 
-LOCK TABLES `membre` WRITE;
-/*!40000 ALTER TABLE `membre` DISABLE KEYS */;
-INSERT INTO `membre` VALUES (1,45,2,'2004-08-25 00:00:00',2154,'2004-09-12 00:00:00','2004-07-09 00:00:00'),(2,225,2,'2000-07-25 00:00:00',1411,'2002-08-12 00:00:00','2000-04-06 00:00:00'),(3,25,0,'2004-04-18 00:00:00',2482,'2005-06-27 00:00:00','2001-09-24 00:00:00'),(4,116,3,'1999-05-22 00:00:00',845,'2000-11-08 00:00:00','1999-04-15 00:00:00'),(5,224,4,'1999-08-29 00:00:00',1265,'2002-03-31 00:00:00','1999-07-14 00:00:00'),(6,32,2,'2004-12-16 00:00:00',3011,'2006-08-26 00:00:00','2004-10-17 00:00:00'),(7,7,2,'2006-05-18 00:00:00',3601,'2007-10-11 00:00:00','2005-05-10 00:00:00'),(8,160,1,'2003-12-25 00:00:00',2098,'2004-07-18 00:00:00','2001-10-02 00:00:00'),(9,44,2,'2002-11-21 00:00:00',2256,'2004-12-04 00:00:00','2002-11-21 00:00:00'),(10,61,2,'2004-06-28 00:00:00',3452,'2007-07-08 00:00:00','2004-04-06 00:00:00'),(11,122,2,'2003-07-21 00:00:00',2922,'2006-05-13 00:00:00','2002-08-07 00:00:00'),(12,191,4,'2007-03-24 00:00:00',3571,'2007-10-27 00:00:00','2005-05-05 00:00:00'),(13,101,2,'2006-04-03 00:00:00',2819,'2006-03-18 00:00:00','2005-10-19 00:00:00'),(14,169,0,'1999-05-25 00:00:00',544,'1999-11-14 00:00:00','1999-01-01 00:00:00'),(15,126,4,'2003-12-12 00:00:00',2025,'2004-04-04 00:00:00','2003-07-26 00:00:00'),(16,96,1,'2007-08-24 00:00:00',3567,'2007-10-23 00:00:00','2007-08-14 00:00:00'),(17,26,0,'2007-07-17 00:00:00',3615,'2007-11-12 00:00:00','2005-10-11 00:00:00'),(18,98,3,'2001-02-04 00:00:00',821,'2000-10-30 00:00:00','1998-10-02 00:00:00'),(19,27,2,'2006-05-30 00:00:00',3558,'2007-10-07 00:00:00','2004-12-03 00:00:00'),(20,173,0,'1998-09-04 00:00:00',640,'2000-02-23 00:00:00','1998-01-10 00:00:00'),(21,73,1,'2003-04-24 00:00:00',1724,'2003-06-12 00:00:00','2001-11-01 00:00:00'),(22,187,4,'2003-02-24 00:00:00',2107,'2004-07-25 00:00:00','2001-07-03 00:00:00'),(23,232,0,'2005-03-25 00:00:00',3595,'2007-10-30 00:00:00','2005-02-28 00:00:00'),(24,205,3,'2007-09-02 00:00:00',3583,'2007-11-02 00:00:00','2006-02-16 00:00:00'),(25,138,1,'2007-10-27 00:00:00',3602,'2007-11-09 00:00:00','2006-11-15 00:00:00'),(26,163,4,'1999-11-21 00:00:00',0,NULL,'1998-01-13 00:00:00'),(27,70,4,'2007-01-13 00:00:00',3599,'2007-10-11 00:00:00','2005-08-25 00:00:00'),(28,52,2,'2007-08-15 00:00:00',3575,'2007-11-08 00:00:00','2004-08-18 00:00:00'),(29,62,1,'2003-12-27 00:00:00',2659,'2005-11-02 00:00:00','2003-08-14 00:00:00'),(30,83,0,'2002-03-15 00:00:00',1456,'2002-09-25 00:00:00','1999-03-27 00:00:00');
-/*!40000 ALTER TABLE `membre` ENABLE KEYS */;
+LOCK TABLES `member` WRITE;
+/*!40000 ALTER TABLE `member` DISABLE KEYS */;
+INSERT INTO `member` VALUES (1,45,2,'2004-08-25 00:00:00',2154,'2004-09-12 00:00:00','2004-07-09 00:00:00'),(2,225,2,'2000-07-25 00:00:00',1411,'2002-08-12 00:00:00','2000-04-06 00:00:00'),(3,25,0,'2004-04-18 00:00:00',2482,'2005-06-27 00:00:00','2001-09-24 00:00:00'),(4,116,3,'1999-05-22 00:00:00',845,'2000-11-08 00:00:00','1999-04-15 00:00:00'),(5,224,4,'1999-08-29 00:00:00',1265,'2002-03-31 00:00:00','1999-07-14 00:00:00'),(6,32,2,'2004-12-16 00:00:00',3011,'2006-08-26 00:00:00','2004-10-17 00:00:00'),(7,7,2,'2006-05-18 00:00:00',3601,'2007-10-11 00:00:00','2005-05-10 00:00:00'),(8,160,1,'2003-12-25 00:00:00',2098,'2004-07-18 00:00:00','2001-10-02 00:00:00'),(9,44,2,'2002-11-21 00:00:00',2256,'2004-12-04 00:00:00','2002-11-21 00:00:00'),(10,61,2,'2004-06-28 00:00:00',3452,'2007-07-08 00:00:00','2004-04-06 00:00:00'),(11,122,2,'2003-07-21 00:00:00',2922,'2006-05-13 00:00:00','2002-08-07 00:00:00'),(12,191,4,'2007-03-24 00:00:00',3571,'2007-10-27 00:00:00','2005-05-05 00:00:00'),(13,101,2,'2006-04-03 00:00:00',2819,'2006-03-18 00:00:00','2005-10-19 00:00:00'),(14,169,0,'1999-05-25 00:00:00',544,'1999-11-14 00:00:00','1999-01-01 00:00:00'),(15,126,4,'2003-12-12 00:00:00',2025,'2004-04-04 00:00:00','2003-07-26 00:00:00'),(16,96,1,'2007-08-24 00:00:00',3567,'2007-10-23 00:00:00','2007-08-14 00:00:00'),(17,26,0,'2007-07-17 00:00:00',3615,'2007-11-12 00:00:00','2005-10-11 00:00:00'),(18,98,3,'2001-02-04 00:00:00',821,'2000-10-30 00:00:00','1998-10-02 00:00:00'),(19,27,2,'2006-05-30 00:00:00',3558,'2007-10-07 00:00:00','2004-12-03 00:00:00'),(20,173,0,'1998-09-04 00:00:00',640,'2000-02-23 00:00:00','1998-01-10 00:00:00'),(21,73,1,'2003-04-24 00:00:00',1724,'2003-06-12 00:00:00','2001-11-01 00:00:00'),(22,187,4,'2003-02-24 00:00:00',2107,'2004-07-25 00:00:00','2001-07-03 00:00:00'),(23,232,0,'2005-03-25 00:00:00',3595,'2007-10-30 00:00:00','2005-02-28 00:00:00'),(24,205,3,'2007-09-02 00:00:00',3583,'2007-11-02 00:00:00','2006-02-16 00:00:00'),(25,138,1,'2007-10-27 00:00:00',3602,'2007-11-09 00:00:00','2006-11-15 00:00:00'),(26,163,4,'1999-11-21 00:00:00',0,NULL,'1998-01-13 00:00:00'),(27,70,4,'2007-01-13 00:00:00',3599,'2007-10-11 00:00:00','2005-08-25 00:00:00'),(28,52,2,'2007-08-15 00:00:00',3575,'2007-11-08 00:00:00','2004-08-18 00:00:00'),(29,62,1,'2003-12-27 00:00:00',2659,'2005-11-02 00:00:00','2003-08-14 00:00:00'),(30,83,0,'2002-03-15 00:00:00',1456,'2002-09-25 00:00:00','1999-03-27 00:00:00');
+/*!40000 ALTER TABLE `member` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `personnel`
+-- Table structure for table `employee`
 --
 
-DROP TABLE IF EXISTS `personnel`;
+DROP TABLE IF EXISTS `employee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `personnel` (
-  `id_personnel` int(11) NOT NULL,
-  `id_fiche_perso` int(11) NOT NULL,
+CREATE TABLE `employee` (
+  `id_employee` int(11) NOT NULL,
+  `id_user_card` int(11) NOT NULL,
   `id_job` tinyint(4) NOT NULL,
-  `horraire` enum('','pm','am') NOT NULL,
-  `date_recrutement` datetime NOT NULL,
-  PRIMARY KEY (`id_personnel`)
+  `schedule` enum('','pm','am') NOT NULL,
+  `date_employment` datetime NOT NULL,
+  PRIMARY KEY (`id_employee`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `personnel`
+-- Dumping data for table `employee`
 --
 
-LOCK TABLES `personnel` WRITE;
-/*!40000 ALTER TABLE `personnel` DISABLE KEYS */;
-/*!40000 ALTER TABLE `personnel` ENABLE KEYS */;
+LOCK TABLES `employee` WRITE;
+/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
+/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `reduction`
+-- Table structure for table `promotion`
 --
 
-DROP TABLE IF EXISTS `reduction`;
+DROP TABLE IF EXISTS `promotion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `reduction` (
-  `id_reduction` int(11) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  `date_debut` datetime DEFAULT NULL,
-  `date_fin` datetime DEFAULT NULL,
-  `pourcentage_reduc` int(11) NOT NULL,
-  PRIMARY KEY (`id_reduction`)
+CREATE TABLE `promotion` (
+  `id_promotion` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `begin_date` datetime DEFAULT NULL,
+  `en_date` datetime DEFAULT NULL,
+  `promo_percentage` int(11) NOT NULL,
+  PRIMARY KEY (`id_promotion`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `reduction`
+-- Dumping data for table `promotion`
 --
 
-LOCK TABLES `reduction` WRITE;
-/*!40000 ALTER TABLE `reduction` DISABLE KEYS */;
-INSERT INTO `reduction` VALUES (0,'jeune',NULL,NULL,30),(1,'vieux',NULL,NULL,25),(2,'tres vieux',NULL,NULL,40),(3,'malsch',NULL,NULL,-134),(4,'fete a neuneu','2007-10-18 00:00:00','2007-10-25 00:00:00',35),(5,'sale con',NULL,NULL,-60),(6,'pognon++','2007-08-03 00:00:00','2007-08-25 00:00:00',-30),(7,'groupe',NULL,NULL,35);
-/*!40000 ALTER TABLE `reduction` ENABLE KEYS */;
+LOCK TABLES `promotion` WRITE;
+/*!40000 ALTER TABLE `promotion` DISABLE KEYS */;
+INSERT INTO `promotion` VALUES (0,'jeune',NULL,NULL,30),(1,'vieux',NULL,NULL,25),(2,'tres vieux',NULL,NULL,40),(3,'malsch',NULL,NULL,-134),(4,'fete a neuneu','2007-10-18 00:00:00','2007-10-25 00:00:00',35),(5,'sale con',NULL,NULL,-60),(6,'pognon++','2007-08-03 00:00:00','2007-08-25 00:00:00',-30),(7,'groupe',NULL,NULL,35);
+/*!40000 ALTER TABLE `promotion` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `salle`
+-- Table structure for table `cinema`
 --
 
-DROP TABLE IF EXISTS `salle`;
+DROP TABLE IF EXISTS `cinema`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `salle` (
-  `id_salle` int(11) NOT NULL,
-  `numero_salle` tinyint(4) NOT NULL,
-  `nom_salle` varchar(255) NOT NULL,
-  `etage_salle` int(11) NOT NULL,
-  `nbr_siege` int(11) NOT NULL,
-  PRIMARY KEY (`id_salle`)
+CREATE TABLE `cinema` (
+  `id_cinema` int(11) NOT NULL,
+  `number_cinema` tinyint(4) NOT NULL,
+  `name_cinema` varchar(255) NOT NULL,
+  `floor_number` int(11) NOT NULL,
+  `nb_seats` int(11) NOT NULL,
+  PRIMARY KEY (`id_cinema`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `salle`
+-- Dumping data for table `cinema`
 --
 
-LOCK TABLES `salle` WRITE;
-/*!40000 ALTER TABLE `salle` DISABLE KEYS */;
-INSERT INTO `salle` VALUES (0,1,'pouet',0,135),(1,2,'machin',0,300),(2,3,'salle 3',0,85),(3,10,'caca',1,85),(4,11,'bidule',1,125),(5,12,'lapin',1,85),(6,13,'bouffon',1,300),(7,14,'toccard',1,85),(8,15,'malsch',1,280),(9,16,'boulet',1,125),(10,20,'pwet',2,200),(11,21,'mega salle',2,35),(12,22,'schtroumpf',2,89),(13,23,'bordel',2,225),(14,30,'barbe_b',3,225),(15,31,'smecta',3,38),(16,32,'bisacodyl',3,130);
-/*!40000 ALTER TABLE `salle` ENABLE KEYS */;
+LOCK TABLES `cinema` WRITE;
+/*!40000 ALTER TABLE `cinema` DISABLE KEYS */;
+INSERT INTO `cinema` VALUES (0,1,'pouet',0,135),(1,2,'machin',0,300),(2,3,'salle 3',0,85),(3,10,'caca',1,85),(4,11,'bidule',1,125),(5,12,'lapin',1,85),(6,13,'bouffon',1,300),(7,14,'toccard',1,85),(8,15,'malsch',1,280),(9,16,'boulet',1,125),(10,20,'pwet',2,200),(11,21,'mega salle',2,35),(12,22,'schtroumpf',2,89),(13,23,'bordel',2,225),(14,30,'barbe_b',3,225),(15,31,'smecta',3,38),(16,32,'bisacodyl',3,130);
+/*!40000 ALTER TABLE `cinema` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
