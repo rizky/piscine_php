@@ -33,7 +33,7 @@
 
         public static function doc()
         {
-			return ("\n" . file_get_contents("Triangle.doc.txt") . PHP_EOL);
+			return (PHP_EOL . file_get_contents("Triangle.doc.txt") . PHP_EOL);
         }
 
         public function getA()

@@ -22,32 +22,32 @@
 
         static $verbose = false;
 
-        public function __construct($array = null)
+        public function __construct($args = null)
         {
-            if (isset($array)) {
-                if (isset($array['preset']))
-                    $this->_preset = $array['preset'];
-                if (isset($array['scale']))
-                    $this->_scale = $array['scale'];
-                if (isset($array['angle']))
-                    $this->_angle = $array['angle'];
-                if (isset($array['vtc']))
-                    $this->_vtc = $array['vtc'];
-                if (isset($array['fov']))
-                    $this->_fov = $array['fov'];
-                if (isset($array['ratio']))
-                    $this->_ratio = $array['ratio'];
-                if (isset($array['near']))
-                    $this->_near = $array['near'];
-                if (isset($array['far']))
-                    $this->_far = $array['far'];
+            if (isset($args)) {
+                if (isset($args['preset']))
+                    $this->_preset = $args['preset'];
+                if (isset($args['scale']))
+                    $this->_scale = $args['scale'];
+                if (isset($args['angle']))
+                    $this->_angle = $args['angle'];
+                if (isset($args['vtc']))
+                    $this->_vtc = $args['vtc'];
+                if (isset($args['fov']))
+                    $this->_fov = $args['fov'];
+                if (isset($args['ratio']))
+                    $this->_ratio = $args['ratio'];
+                if (isset($args['near']))
+                    $this->_near = $args['near'];
+                if (isset($args['far']))
+                    $this->_far = $args['far'];
                 $this->check();
                 $this->createMatrix();
                 if (Self::$verbose) {
-                    if ($this->_preset == Self::IDENTITY)
-                        echo "Matrix " . $this->_preset . " instance constructed\n";
-                    else
-                        echo "Matrix " . $this->_preset . " preset instance constructed\n";
+					if ($this->_preset == Self::IDENTITY)
+						print("Matrix " . $this->_preset . " instance constructed" . PHP_EOL);
+					else
+						print("Matrix " . $this->_preset . " preset instance constructed" . PHP_EOL);
                 }
                 $this->dispatch();
             }
@@ -190,22 +190,22 @@
         function __destruct()
         {
             if (Self::$verbose)
-                printf("Matrix instance destructed\n");
+                printf("Matrix instance destructed" . PHP_EOL);
         }
 
         function __toString()
         {
-            $tmp = "M | vtcX | vtcY | vtcZ | vtxO\n";
-            $tmp .= "-----------------------------\n";
-            $tmp .= "x | %0.2f | %0.2f | %0.2f | %0.2f\n";
-            $tmp .= "y | %0.2f | %0.2f | %0.2f | %0.2f\n";
-            $tmp .= "z | %0.2f | %0.2f | %0.2f | %0.2f\n";
+            $tmp  = "M | vtcX | vtcY | vtcZ | vtxO" . PHP_EOL;
+            $tmp .= "-----------------------------" . PHP_EOL;
+            $tmp .= "x | %0.2f | %0.2f | %0.2f | %0.2f" . PHP_EOL;
+            $tmp .= "y | %0.2f | %0.2f | %0.2f | %0.2f" . PHP_EOL;
+            $tmp .= "z | %0.2f | %0.2f | %0.2f | %0.2f" . PHP_EOL;
             $tmp .= "w | %0.2f | %0.2f | %0.2f | %0.2f";
             return (vsprintf($tmp, array($this->matrix[0], $this->matrix[1], $this->matrix[2], $this->matrix[3], $this->matrix[4], $this->matrix[5], $this->matrix[6], $this->matrix[7], $this->matrix[8], $this->matrix[9], $this->matrix[10], $this->matrix[11], $this->matrix[12], $this->matrix[13], $this->matrix[14], $this->matrix[15])));
         }
 
         public static function doc()
         {
-			return ("\n" . file_get_contents("Matrix.doc.txt") . PHP_EOL);
+			return (PHP_EOL . file_get_contents("Matrix.doc.txt") . PHP_EOL);
         }
     }

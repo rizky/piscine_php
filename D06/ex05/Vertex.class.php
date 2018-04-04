@@ -46,7 +46,7 @@
 		
 		public static function doc()
         {
-			return ("\n" . file_get_contents("Vertex.doc.txt") . PHP_EOL);
+			return (PHP_EOL . file_get_contents("Vertex.doc.txt") . PHP_EOL);
         }
 
         public function getX()

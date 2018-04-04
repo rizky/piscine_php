@@ -92,6 +92,6 @@
 
         public static function doc()
         {
-            return ("\n" . file_get_contents("Camera.doc.txt") . PHP_EOL);
+            return (PHP_EOL . file_get_contents("Camera.doc.txt") . PHP_EOL);
         }
     }

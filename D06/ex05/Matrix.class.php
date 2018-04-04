@@ -241,6 +241,6 @@
 
         public static function doc()
         {
-			return ("\n" . file_get_contents("Matrix.doc.txt") . PHP_EOL);
+			return (PHP_EOL . file_get_contents("Matrix.doc.txt") . PHP_EOL);
         }
     }
