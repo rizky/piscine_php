@@ -8,21 +8,21 @@
         private $_w = 0;
         static $verbose = false;
 
-        public function __construct($array)
+        public function __construct($args)
         {
-            if (isset($array['dest']) && $array['dest'] instanceof Vertex) {
-                if (isset($array['orig']) && $array['orig'] instanceof Vertex) {
-                    $orig = new Vertex(array('x' => $array['orig']->getX(), 'y' => $array['orig']->getY(), 'z' => $array['orig']->getZ()));
+            if (isset($args['dest']) && $args['dest'] instanceof Vertex) {
+                if (isset($args['orig']) && $args['orig'] instanceof Vertex) {
+                    $orig = new Vertex(array('x' => $args['orig']->getX(), 'y' => $args['orig']->getY(), 'z' => $args['orig']->getZ()));
                 } else {
                     $orig = new Vertex(array('x' => 0, 'y' => 0, 'z' => 0));
                 }
-                $this->_x = $array['dest']->getX() - $orig->getX();
-                $this->_y = $array['dest']->getY() - $orig->getY();
-                $this->_z = $array['dest']->getZ() - $orig->getZ();
+                $this->_x = $args['dest']->getX() - $orig->getX();
+                $this->_y = $args['dest']->getY() - $orig->getY();
+                $this->_z = $args['dest']->getZ() - $orig->getZ();
                 $this->_w = 0;
             }
             if (Self::$verbose)
-                printf("Vector( x:%0.2f, y:%0.2f, z:%0.2f, w:%0.2f ) constructed\n", $this->_x, $this->_y, $this->_z, $this->_w);
+				print("$this constructed" . PHP_EOL);
         }
 
         public function magnitude()
@@ -80,8 +80,8 @@
 
         function __destruct()
         {
-            if (Self::$verbose)
-                printf("Vector( x:%0.2f, y:%0.2f, z:%0.2f, w:%0.2f ) destructed\n", $this->_x, $this->_y, $this->_z, $this->_w);
+			if (Self::$verbose)
+				print("$this destructed" . PHP_EOL);
         }
 
         function __toString()

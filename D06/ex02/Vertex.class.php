@@ -12,16 +12,18 @@
 
         public function __construct($args)
         {
-            $this->_x = $args['x'];
-            $this->_y = $args['y'];
-            $this->_z = $args['z'];
-            if (array_key_exists('w', $args) && !empty($args['w']))
+			if (array_key_exists('x', $args))
+				$this->_x = $args['x'];
+			if (array_key_exists('y', $args))
+				$this->_y = $args['y'];
+			if (array_key_exists('z', $args))
+            	$this->_z = $args['z'];
+            if (array_key_exists('w', $args))
                 $this->_w = $args['w'];
-            if (array_key_exists('color', $args) && !empty($args['color']) && $args['color'] instanceof Color) {
+            if (array_key_exists('color', $args) && $args['color'] instanceof Color)
                 $this->_color = $args['color'];
-            } else {
+            else
                 $this->_color = new Color(array('red' => 255, 'green' => 255, 'blue' => 255));
-            }
             if (Self::$verbose)
 				print("$this constructed" . PHP_EOL);
         }
@@ -35,7 +37,7 @@
         function __toString()
         {
             if (Self::$verbose)
-                return (vsprintf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f, Color( red: %3d, green: %3d, blue: %3d ) )", array($this->_x, $this->_y, $this->_z, $this->_w, $this->_color->red, $this->_color->green, $this->_color->blue)));
+                return (vsprintf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f, $this->_color )", array($this->_x, $this->_y, $this->_z, $this->_w)));
             return (vsprintf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f )", array($this->_x, $this->_y, $this->_z, $this->_w)));
         }
 		
