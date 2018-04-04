@@ -26,9 +26,12 @@
 
         function __toString()
         {
-            if (Self::$verbose)
-                return (vsprintf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f, Color( red: %3d, green: %3d, blue: %3d ) )", array($this->_x, $this->_y, $this->_z, $this->_w, $this->_color->red, $this->_color->green, $this->_color->blue)));
-            return (vsprintf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f )", array($this->_x, $this->_y, $this->_z, $this->_w)));
+			if (Self::$verbose)
+			{
+				Vertex::$verbose;
+				return (vsprintf("Triangle( $this->_a\n, $this->_b\n, $this->_c\n )"));
+			}
+            return (vsprintf("Triangle( $this->_a\n, $this->_b\n, $this->_c\n )"));
         }
 
         public static function doc()
