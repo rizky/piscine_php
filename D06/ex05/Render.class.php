@@ -19,7 +19,7 @@
             $this->_image = imagecreate((integer)$this->_width, (integer)$this->_height);
             imagecolorallocate($this->_image, 0, 0, 0);
             if (Self::$verbose)
-                echo "Render instance constructed\n";
+                echo "Render instance constructed" . PHP_EOL;
         }
 
         public function renderVertex(Vertex $screenVertex)
@@ -69,20 +69,16 @@
         function __destruct()
         {
             if (Self::$verbose)
-                echo "Render instance destructed\n";
+                print "Render instance destructed" . PHP_EOL;
         }
 
         function __toString()
         {
-            return ("Je suis le render\n");
+            return ("I am a renderer" . PHP_EOL);
         }
 
         public static function doc()
         {
-            $read = fopen("Render.doc.txt", 'r');
-            echo "\n";
-            while ($read && !feof($read))
-                echo fgets($read);
-            echo "\n";
+			return (PHP_EOL . file_get_contents("Render.doc.txt") . PHP_EOL);
         }
     }
