@@ -173,6 +173,27 @@
             $matrice = new Matrix();
             $matrice->matrix = $tmp;
             return $matrice;
+		}
+		
+		public function transpose(){
+            $tmp[0] = $this->matrix[0];
+            $tmp[1] = $this->matrix[4];
+            $tmp[2] = $this->matrix[8];
+            $tmp[3] = $this->matrix[12];
+            $tmp[4] = $this->matrix[1];
+            $tmp[5] = $this->matrix[5];
+            $tmp[6] = $this->matrix[9];
+            $tmp[7] = $this->matrix[13];
+            $tmp[8] = $this->matrix[2];
+            $tmp[9] = $this->matrix[6];
+            $tmp[10] = $this->matrix[10];
+            $tmp[11] = $this->matrix[14];
+            $tmp[12] = $this->matrix[3];
+            $tmp[13] = $this->matrix[7];
+            $tmp[14] = $this->matrix[11];
+            $tmp[15] = $this->matrix[15];
+            $this->matrix = $tmp;
+            return ($this);
         }
 
         public function transformVertex(Vertex $vtx)
@@ -185,7 +206,8 @@
             $tmp['color'] = $vtx->getColor();
             $vertex = new Vertex($tmp);
             return $vertex;
-        }
+		}
+		
 
         function __destruct()
         {

@@ -26,6 +26,11 @@
                 $this->_color = new Color(array('red' => 255, 'green' => 255, 'blue' => 255));
             if (Self::$verbose)
 				print("$this constructed" . PHP_EOL);
+		}
+				
+		public function opposite()
+        {
+            return new Vector(array('dest' => new Vertex(array('x' => $this->_x * -1, 'y' => $this->_y * -1, 'z' => $this->_z * -1))));
         }
 
         function __destruct()
