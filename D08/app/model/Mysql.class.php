@@ -5,9 +5,9 @@
         private $PDOInstance = null;
         private static $instance = null;
 
-        const SQL_USER = 'xxx';
-        const SQL_HOST = 'xxx';
-        const SQL_PASSWORD = 'xxx';
+        const SQL_USER = 'root';
+        const SQL_HOST = 'db';
+        const SQL_PASSWORD = 'root';
         const SQL_DB = 'd08';
 
         private function __construct()

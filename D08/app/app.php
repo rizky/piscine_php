@@ -2,10 +2,10 @@
     session_start();
 
     //require configuration
-    $conf = parse_ini_file('../config/local.ini');
+    $conf = parse_ini_file('app/config/local.ini');
 
     //require dependencies
-    require_once('../vendor/autoload.php');
+    require_once('app/vendor/autoload.php');
 
     //slim configuration
     $app = new \Slim\Slim(array(
