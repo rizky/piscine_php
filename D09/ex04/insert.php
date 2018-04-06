@@ -10,4 +10,5 @@
                 $max = $tmp[0] + 1;
         }
         file_put_contents("list.csv", $max.";".$_GET["todo"].PHP_EOL, FILE_APPEND);
-    }
+	}
+?>

@@ -9,37 +9,27 @@ $(document).ready(function(){
 
 function loadTodo(){
     ft_list.empty();
-    aj('select.php', "GET", null, function(data){
-        data = jQuery.parseJSON(data);
+	$.get('select.php', function(data){
+		data = jQuery.parseJSON(data);
         jQuery.each(data, function(i, val) {
             ft_list.prepend($('<div data-id="' + i + '">' + val + '</div>').click(deleteTodo));
         });
-    });
+	});
 }
 
 function newTodo(){
     var todo = prompt("What do you want to do?", '');
     if (todo !== '') {
-        aj('insert.php?todo=' + todo, "GET", null, loadTodo);
-    }
+		$.get('insert.php?todo=' + todo, function(){
+			loadTodo();
+		})
+	}
 }
 
 function deleteTodo(){
     if (confirm("Are you sure you want to delete this task?")){
-        aj('delete.php?id=' + $(this).data('id'), "GET", null, loadTodo);
+		$.get('delete.php?id=' + $(this).data('id'), function(){
+			loadTodo();
+		})
     }
-}
-
-function aj(url, method, data, success) {
-    $.ajax({
-            method: method,
-            url: url,
-            data: data
-        })
-        .done(function (data) {
-            success(data);
-        })
-        .error(function (msg) {
-            alert("error ajax : " + msg);
-        });
 }

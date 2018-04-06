@@ -10,4 +10,5 @@
                 $list .= $tmp[0].";".$tmp[1].PHP_EOL;
         }
         file_put_contents("list.csv", $list);
-    }
+	}
+?>
