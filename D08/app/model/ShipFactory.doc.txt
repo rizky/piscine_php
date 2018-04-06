@@ -1,20 +1,22 @@
 <- ShipFactory ----------------------------------------------------------------------
-ShipFactory est une factory d'instance de Ship.
+ShipFactory is an instance factory of Ship.
 
-Les constantes de class définissent les tables Mysql
+Class constants define Mysql tables
 
--> public static function load(int $id)
-int $id -> ID du 'ship'
-Cette methode statique permet de récuperer les données d'un seul 'ship'
-retourn un tableau des valeur de 'ship' en question
+-> public static function load (int $id)
+int $id -> Ship ID
+This static method allows to retrieve the data of a single 'ship'
+returns an array of the value of 'ship' in question
 
--> public static function loadAll()
-Cette methode statique permet de récuperer les données de tous les 'ships'
-retourn un tableau de valeur de tous les 'ship'
+-> public static function loadAll ()
+This static method allows to retrieve data from all 'ships'
+returns array of all 'ship'
 
--> private static function create(array $a)
-array $a -> valeur du 'ship' à créer
+-> private static function create (array $a)
+array $a -> value of 'ship' to create
 
--> public staic function doc()
-Permet d'afficher la doc.
+-> public static function doc ()
+Displays the doc.
+
+-> Getter and Setter accordingly.
 ---------------------------------------------------------------------- ShipFactory ->

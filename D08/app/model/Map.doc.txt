@@ -1,30 +1,30 @@
 <- Map ----------------------------------------------------------------------
-La map est l'endroit ou tout les obstacle et 'ship' seront rataché.
+The map is where all the obstacles and 'ship' will be picked up.
 
-En constante, elle contient la hauteur et la largeur souhaité de la map.
+Constantly, it contains the desired height and width of the map.
 
--> public function __construct()
-Construit la map et insert une nouvelle instance fraiche de Square dans chaque case.
-La map est dans private $_map. C'est un array.
+-> public function __construct ()
+Build the map and insert a fresh instance of Square in each box.
+The map is in private $_map. It's an array.
 
--> public function initMap()
-Méthode qui généra un nouvelle map ainsi que des nouveau obstacle.
-Utilise les valeur de $_ratioObstacle, sizeMaxObstacle et sizeSafeZone pour
-crée aléatoirement les obstacles sur la map.
+-> public function initMap ()
+Method that generated a new map as well as new obstacles.
+Uses the value of $_ratioObstacle, sizeMaxObstacle and sizeSafeZone for
+Randomly creates obstacles on the map.
 
--> private function addObstacle()
-Méthode qui va faire appel a la méthode static loadAll de Obstacle pour
-crée l'ensemble des obstacles et les mettres dans le paramètre prive _map.
+-> private function addObstacle ()
+Method that will use the static loadAll method of Obstacle to create
+ set of obstacles and put them in the _map private parameter.
 
--> public function getCoord(int, int)
-int : X
-int : Y
-Méthode qui retourne l'objet qui est sur la position passé en paramètre.
+-> public function getCoord (int, int)
+int: X
+int: Y
+Method that returns the object that is on the position passed in parameter.
 
--> public function addShipMap(array)
-array : tableau de Ship
-Méthode qui va ajouté sur le paramètre privé _map l'ensemble des 'ship' présents en fonction de leurs
-rotation.
+-> public function addShipMap (array)
+array: Ship's array
+Method that will add on the private parameter _map the set of 'ships' 
+present according to their rotation.
 
 -> public static function doc ()
 Displays the doc.

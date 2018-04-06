@@ -1,38 +1,34 @@
 <- Weapon ----------------------------------------------------------------------
-Weapon est une arme qu'un 'ship' pourrais recevoir
+Weapon is a weapon that a ship could receive
 
-utilise le trait 'Convert'
+uses the 'Convert' trait
 
--> public function __Construct(*)
-Prend en parametre tous les parametre de la class.
-Crée une instance de la class en questions.
+-> public function __Construct (*)
+Take as parameter all the parameters of the class.
+Creates an instance of the class in questions.
 
--> public function getCaseFire(Ship $ship)
-Retourne un tableau de tous les points que le 'weapon' toucherais sur la map.
-Les points sont uniquement contenues dans la map
-Prend en compte le 'Ship' pour définir la position d'origine du tir ainsi que
-sont orientation.
+-> public function getCaseFire (Ship $ship)
+Return an array of all the points that the 'weapon' would hit on the map.
+The points are only contained in the map
+Takes into account the 'Ship' to define the original position of the shot as well as
+are orientation.
 
--> public function fire(Ship, Game)
-C'est la fonction qui déclenche un tir. Elle prend en compte Game pour avoir
-les points de la totalité des 'ships' ainsi que des 'obstacles'.
-Elle utilise la class 'Dice' pour définir la longeur du tir.
-En cas de touche, elle appellera la methode Touch de l'object touché.
-Appel la methode save pour sauvegarder l'état de l'arme.
+-> public function fire (Ship, Game)
+This is the function that triggers a shot. It takes into account Game to have the points of all 'ships' as well as 'obstacles'.
+She uses the class 'Dice' to define the length of the shot.
+In case of touch, it will call the Touch method of the affected object.
+Call the save method to save the state of the weapon.
 
--> public function addCharge()
-Permet d'ajouter une currentCharge à lui-même.
-Appel la methode save pour sauvegarder l'état de l'arme.
+-> public function addCharge ()
+Adds a currentCharge to itself.
+Call the save method to save the state of the weapon.
 
--> public function wakeup()
-Permet de faire un reset des valeur de l'arme lors d'un nouveau tour.
-Appel la methode save pour sauvegarder l'état de l'arme.
+-> public function wakeup ()
+Allows a reset of the weapon's value during a new turn.
+Call the save method to save the state of the weapon.
 
--> private function save()
-Permet de sauvegarder l'état de l'arme.
-
--> public staic function doc()
-Permet d'afficher la doc.
+-> private function save ()
+Allows saving the state of the weapon.
 
 -> public static function doc ()
 Displays the doc.
