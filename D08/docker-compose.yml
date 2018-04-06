@@ -1,22 +1,6 @@
 version: '3'
 
 services:
-  app:
-    image: piscine_php_d08
-    command: php -S 0.0.0.0:80 /app/index.php
-    ports:
-      - "80:80"
-    links:
-      - db
-    volumes:
-      - .:/app
-
-  composer:
-    image: composer
-    command: install
-    volumes:
-      - .:/app
-
   db:
     image: piscine_php_d08_db
     restart: always

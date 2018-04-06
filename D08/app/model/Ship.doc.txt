@@ -69,10 +69,8 @@ Retourne l'ensemble des cases que l'arme touchera dans un tableau.
 Retourne false si il y a pas de case.
 
 
--> public staic function doc()
-Permet d'afficher la doc.
+-> public static function doc ()
+Displays the doc.
 
--> Getter et Setter suivant des besoins.
-
-Etat non définit en cas de passage d'arguments non souhaité.
+-> Getter and Setter accordingly.
 ---------------------------------------------------------------------- Ship ->

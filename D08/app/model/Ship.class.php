@@ -89,7 +89,6 @@
 
         public function move($case)
         {
-            //TODO : refaire le check colision
             $obstacle = Obstacle::loadAll();
 
             for ($i = 0; $i < $case; $i++) {

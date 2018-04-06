@@ -6,7 +6,6 @@
         $action = array();
         $value = array();
         if ($ship->getSleep() == 0 && $ship->getCurrentActive() == 1) {
-            //Phase d'ordre
             if ($ship->getStep() == 0) {
                 $value['pp'] = $ship->getCurrentPp();
                 $value['speed'] = $ship->getCurrentSpeed();
@@ -14,9 +13,7 @@
                 $action['ppSpeed'] = 1;
                 $action['ppShield'] = 1;
                 $action['ppStop'] = 1;
-                //TODO: 1PP Depensé pour une arme donne 1d6 supplémentaire pour tirer avec cette arme.
             } elseif ($ship->getStep() == 1) {
-                //TODO: Checker si il est immobile
                 $action['rotation'] = 1;
                 $action['move'] = array('min' => $ship->getManeuverability(), 'max' => $ship->getCurrentSpeed());
                 $action['stopMove'] = 1;

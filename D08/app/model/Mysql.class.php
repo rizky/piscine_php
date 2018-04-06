@@ -6,7 +6,7 @@
         private static $instance = null;
 
         const SQL_USER = 'root';
-        const SQL_HOST = 'db';
+        const SQL_HOST = '127.0.0.1';
         const SQL_PASSWORD = 'root';
         const SQL_DB = 'd08';
 

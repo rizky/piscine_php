@@ -1,29 +1,24 @@
 <- Game ----------------------------------------------------------------------
-Class principal, elle contiendera les information du jeux ainsi que les règles
-du jeu
+Main class, it will contain the game information as well as the games rules
 
--> public function __construct()
-Lors de la construction de l'object, il va construire un object Map et l'ajouté
-dans _map ainsi que la liste des 'ship' dans _ships.
-Fait appel a la fonction CheckEndTurn pour savoir si c'est la fin du tour et,
-dans ce cas, reset tout les 'ship'
+-> public function __construct ()
+When building the object, it will build an object Map and add it in _map 
+as well as the list of 'ships' in _ships. Calls the CheckEndTurn function
+to find out if it's the end of the turn and, in this case, reset all the 'ships'
 
--> public function possibleActivation()
-Méthode qui sera appelé quand un joueur voudra activé un 'ship'. Controle si il
-peux le faire et retourn true dans ce cas, false sinon.
+-> public function possibleActivation ()
+Method that will be called when a player wants to activate a 'ship'. 
+Check if it's possible and return true if it can, and false otherwise.
 
--> private function checkEndTurn()
-Methode qui sera appelé à chaque construction de Game. Contrôle si tout les 'ships'
-ont fini leur tour, et dans se cas retourn true, sinon false.
+-> private function checkEndTurn ()
+Method that will be called each time game is build. Check if all 'ships' 
+have finished their turn, return true if that's the case, otherwise false.
 
--> private function newTurn()
-Méthode qui appelera wakeup de l'ensemble des 'ship'. Est appelé en cas de
-nouveau tour
+-> private function newTurn ()
+Method that will call wakeup all 'ships'. Will be called in case of a new round
 
--> public staic function doc()
-Permet d'afficher la doc.
+-> public static function doc ()
+Displays the doc.
 
--> Getter et Setter suivant des besoins.
-
-Etat non définit en cas de passage d'arguments non souhaité.
+-> Getter and Setter accordingly.
 ---------------------------------------------------------------------- Game ->

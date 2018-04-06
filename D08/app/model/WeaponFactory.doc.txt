@@ -12,6 +12,8 @@ retourne un array de tous les 'weapons'
 -> private static function create(array $a)
 array $a -> valeur du 'weapon' à créer
 
--> public staic function doc()
-Permet d'afficher la doc.
+-> public static function doc ()
+Displays the doc.
+
+-> Getter and Setter accordingly.
 ---------------------------------------------------------------------- WeaponFactory ->

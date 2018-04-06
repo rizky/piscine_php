@@ -20,20 +20,20 @@
     <p id="ppStop" class="actionButton">Phase de mouvement</p>
 {% endif %}
 {% if action.rotation %}
-    <p id="turnLeft" class="actionButton">Tourner a gauche</p>
-    <p id="turnRight" class="actionButton">Tourner a droite</p>
+    <p id="turnLeft" class="actionButton">Turn Left</p>
+    <p id="turnRight" class="actionButton">Turn Right</p>
 {% endif %}
 {% if action.weapons %}
     {% for w in action.weapons %}
-        <p class="actionButton"><span class="weapon" data-id="{{ w.id }}">{{ w.name }} | Point de charge : {{ w.charge }} + {{ w.currentCharge }} </span><span class="addCharge" data-id="{{ w.id }}">+charge</span></p>
+        <p class="actionButton"><span class="weapon" data-id="{{ w.id }}">{{ w.name }} | Charge Point : {{ w.charge }} + {{ w.currentCharge }} </span><span class="addCharge" data-id="{{ w.id }}">+charge</span></p>
     {% endfor %}
 {% endif %}
 {% if action.move %}
     {% for i in action.move.min .. action.move.max %}
         <p id="move" class="move actionButton" data-case="{{ i }}">Avancer de {{ i }} case</p>
     {% endfor %}
-    <p id="stopMove" class="actionButton">Phase de tir</p>
+    <p id="stopMove" class="actionButton">Shooting phase</p>
 {% endif %}
 {% if action.fireStop %}
-    <p id="fireStop" class="actionButton">Fin de tour</p>
+    <p id="fireStop" class="actionButton">End of turn</p>
 {% endif %}
