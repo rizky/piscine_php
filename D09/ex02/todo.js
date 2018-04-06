@@ -26,18 +26,19 @@ function newTodo(){
     if (todo !== '') {
         addTodo(todo)
 	}
-	saveToCookie();
 }
 
 function addTodo(todo){
     var div = document.createElement("div");
     div.innerHTML = todo;
     div.addEventListener("click", deleteTodo);
-    ft_list.insertBefore(div, ft_list.firstChild);
+	ft_list.insertBefore(div, ft_list.firstChild);
+	saveToCookie();
 }
 
 function deleteTodo(){
     if (confirm("Are you sure you want to delete this task?")){
-        this.parentElement.removeChild(this);
+		this.parentElement.removeChild(this);
+		saveToCookie();
     }
 }

@@ -27,15 +27,16 @@ function newTodo(){
     if (todo !== '') {
         addTodo(todo)
 	}
-	saveToCookie();
 }
 
 function addTodo(todo){
-    ft_list.prepend($('<div>' + todo + '</div>').click(deleteTodo));
+	ft_list.prepend($('<div>' + todo + '</div>').click(deleteTodo));
+	saveToCookie();
 }
 
 function deleteTodo(){
     if (confirm("Are you sure you want to delete this task?")){
-        this.remove();
+		this.remove();
+		saveToCookie();
     }
 }
