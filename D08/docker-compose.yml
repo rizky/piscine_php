@@ -6,6 +6,8 @@ services:
     command: php -S 0.0.0.0:80 /app/index.php
     ports:
       - "80:80"
+    links:
+      - db
     volumes:
       - .:/app
 
