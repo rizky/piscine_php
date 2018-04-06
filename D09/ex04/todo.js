@@ -27,9 +27,7 @@ function newTodo(){
 }
 
 function deleteTodo(){
-    if (confirm("Are you sure you want to delete this task?")){
-		$.get('delete.php?id=' + $(this).data('id'), function(){
-			loadTodo();
-		})
-    }
+	$.get('delete.php?id=' + $(this).data('id'), function(){
+		loadTodo();
+	})
 }
