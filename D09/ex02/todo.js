@@ -4,7 +4,7 @@ var cookie = [];
 window.onload = function () {
     document.querySelector("#new").addEventListener("click", newTodo);
     ft_list = document.querySelector("#ft_list");
-	var tmp = document.cookie;
+	var tmp = document.cookie.replace(/(?:(?:^|.*;\s*)todos\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     if (tmp) {
 		cookie = JSON.parse(tmp);
         cookie.forEach(function (e) {
@@ -18,7 +18,7 @@ function saveToCookie(){
     var newCookie = [];
     for (var i = 0; i < todo.length; i++)
         newCookie.unshift(todo[i].innerHTML);
-    document.cookie = JSON.stringify(newCookie);
+	document.cookie= "todos=" + JSON.stringify(newCookie);
 };
 
 function newTodo(){

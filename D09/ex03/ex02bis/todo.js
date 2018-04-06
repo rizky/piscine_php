@@ -4,8 +4,9 @@ var cookie = [];
 $(document).ready(function(){
     $('#new').click(newTodo);
     $('#ft_list div').click(deleteTodo);
-    ft_list = $('#ft_list');
-    var tmp = document.cookie;
+	ft_list = $('#ft_list');
+	console.log(document.cookie);
+    var tmp = document.cookie.replace(/(?:(?:^|.*;\s*)todos\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     if (tmp) {
         cookie = JSON.parse(tmp);
         cookie.forEach(function (e) {
@@ -19,7 +20,7 @@ function saveToCookie(){
     var newCookie = [];
     for (var i = 0; i < todo.length; i++)
         newCookie.unshift(todo[i].innerHTML);
-    document.cookie = JSON.stringify(newCookie);
+	document.cookie= "todos=" + JSON.stringify(newCookie);
 }
 
 function newTodo(){
