@@ -19,15 +19,15 @@
             setInterval("alert('Please, use me...')", 30000);
         });
 
-        function numIsValid(l, r) {
-            return l == parseInt(l, 10) && l >= 0 && r == parseInt(r, 10) && r >= 0;
-        }
+        function isNormalInteger(str) {
+			return /^\+?(0|[1-9]\d*)$/.test(str);
+		}
 
         function submit(event) {
             event.preventDefault();
             var l = Number(left.val());
             var r = Number(right.val());
-            if (!numIsValid(left.val(), right.val())) {
+			if (!isNormalInteger(left.value) || !isNormalInteger(right.value)) {
                 alert("Error :(");
                 return false;
             }

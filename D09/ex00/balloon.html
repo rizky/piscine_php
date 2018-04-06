@@ -12,16 +12,9 @@
         }
     </style>
     <script>
-        var color = {0: '#ff0000', 1: '#00ff00', 2: '#0000ff'};
+        var color = {0: 'red', 1: 'green', 2: 'blue'};
         var colorIndex = 0;
-        var balloon;
-        var size = 200;
-
-        window.onload = function () {
-            balloon = document.querySelector("#balloon");
-            balloon.addEventListener("click", balloonClick);
-            balloon.addEventListener("mouseleave", balloonMouse);
-        }
+		var size = 200;
 
         function balloonMouse(){
             size -= 5;
@@ -48,6 +41,7 @@
         }
 
         function balloonRefresh(colorIndex){
+			balloon = document.querySelector("#balloon");
             balloon.style.height = size + 'px';
             balloon.style.width = size + 'px';
             balloon.style.backgroundColor = color[colorIndex];
@@ -55,8 +49,6 @@
     </script>
 </head>
 <body>
-    <div class="balloon" id="balloon">
-
-    </div>
+    <div class="balloon" id="balloon" onclick="balloonClick()" onmouseout="balloonMouse()"></div>
 </body>
 </html>
