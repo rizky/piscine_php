@@ -1,13 +1,24 @@
-app:
-  image: php:7
-  command: php -S 0.0.0.0:80 /app/public/index.php
-  ports:
-    - "80:80"
-  volumes:
-    - .:/app
+version: '3'
 
-composer:
-  image: composer
-  command: install
-  volumes:
-    - .:/app
+services:
+  app:
+    image: piscine_php_d08
+    command: php -S 0.0.0.0:80 /app/index.php
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
+
+  composer:
+    image: composer
+    command: install
+    volumes:
+      - .:/app
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"

@@ -3,3 +3,5 @@ Rush00/movie/mysql/*
 Rush00/project/mysql/ibtmp1
 Rush00/project/mysql/ibdata1
 Rush00/project/mysql/ib_logfile0
+D08/vendor/*
+D08/composer.lock

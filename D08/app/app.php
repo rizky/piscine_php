@@ -2,16 +2,16 @@
     session_start();
 
     //require configuration
-    $conf = parse_ini_file('app/config/local.ini');
+    $conf = parse_ini_file('/app/config/local.ini');
 
     //require dependencies
-    require_once('app/vendor/autoload.php');
+    require_once('/app/vendor/autoload.php');
 
     //slim configuration
     $app = new \Slim\Slim(array(
         'debug' => $conf['SLIM_DEBUG'],
         'log.enable' => $conf['SLIM_LOG'],
-        'templates.path' => '../app/view',
+        'templates.path' => '/app/app/view',
         'view' => new \Slim\Views\Twig(),
         'cache' => dirname(__FILE__) . '/cache',
     ));
