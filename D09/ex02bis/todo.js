@@ -14,19 +14,20 @@ $(document).ready(function(){
     }
 });
 
-$(window).unload(function(){
+function saveToCookie(){
     var todo = ft_list.children();
     var newCookie = [];
     for (var i = 0; i < todo.length; i++)
         newCookie.unshift(todo[i].innerHTML);
     document.cookie = JSON.stringify(newCookie);
-})
+}
 
 function newTodo(){
     var todo = prompt("What do you want to do?", '');
     if (todo !== '') {
         addTodo(todo)
-    }
+	}
+	saveToCookie();
 }
 
 function addTodo(todo){

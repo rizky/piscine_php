@@ -4,16 +4,16 @@ var cookie = [];
 window.onload = function () {
     document.querySelector("#new").addEventListener("click", newTodo);
     ft_list = document.querySelector("#ft_list");
-    var tmp = document.cookie;
+	var tmp = document.cookie;
     if (tmp) {
-        cookie = JSON.parse(tmp);
+		cookie = JSON.parse(tmp);
         cookie.forEach(function (e) {
             addTodo(e);
         });
     }
 };
 
-window.onunload = function () {
+function saveToCookie(){
     var todo = ft_list.children;
     var newCookie = [];
     for (var i = 0; i < todo.length; i++)
@@ -25,7 +25,8 @@ function newTodo(){
     var todo = prompt("What do you want to do?", '');
     if (todo !== '') {
         addTodo(todo)
-    }
+	}
+	saveToCookie();
 }
 
 function addTodo(todo){
