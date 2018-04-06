@@ -35,8 +35,6 @@ function addTodo(todo){
 }
 
 function deleteTodo(){
-    if (confirm("Are you sure you want to delete this task?")){
-		this.remove();
-		saveToCookie();
-    }
+	this.remove();
+	saveToCookie();
 }
