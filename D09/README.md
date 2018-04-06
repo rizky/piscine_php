@@ -1,1 +1,1 @@
-webratio/nodejs-http-server
+docker run -v $PWD:/opt/www -p 80:8080 webratio/nodejs-http-server
