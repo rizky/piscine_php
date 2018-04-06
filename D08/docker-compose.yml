@@ -16,7 +16,7 @@ services:
       - .:/app
 
   db:
-    image: mysql
+    image: piscine_php_d08_db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
