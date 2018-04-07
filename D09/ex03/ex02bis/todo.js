@@ -5,8 +5,7 @@ $(document).ready(function(){
     $('#new').click(newTodo);
     $('#ft_list div').click(deleteTodo);
 	ft_list = $('#ft_list');
-	console.log(document.cookie);
-    var tmp = document.cookie.replace(/(?:(?:^|.*;\s*)todos\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+	var tmp = getCookie("todos");
     if (tmp) {
         cookie = JSON.parse(tmp);
         cookie.forEach(function (e) {
@@ -14,6 +13,12 @@ $(document).ready(function(){
         });
     }
 });
+
+function getCookie(name) {
+	var value = "; " + document.cookie;
+	var parts = value.split("; " + name + "=");
+	if (parts.length == 2) return parts.pop().split(";").shift();
+};
 
 function saveToCookie(){
     var todo = ft_list.children();

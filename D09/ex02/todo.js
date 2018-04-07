@@ -4,13 +4,19 @@ var cookie = [];
 window.onload = function () {
     document.querySelector("#new").addEventListener("click", newTodo);
     ft_list = document.querySelector("#ft_list");
-	var tmp = document.cookie.replace(/(?:(?:^|.*;\s*)todos\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+	var tmp = getCookie("todos");
     if (tmp) {
 		cookie = JSON.parse(tmp);
         cookie.forEach(function (e) {
             addTodo(e);
         });
     }
+};
+
+function getCookie(name) {
+	var value = "; " + document.cookie;
+	var parts = value.split("; " + name + "=");
+	if (parts.length == 2) return parts.pop().split(";").shift();
 };
 
 function saveToCookie(){
