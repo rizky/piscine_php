@@ -27,7 +27,7 @@
             event.preventDefault();
             var l = Number(left.val());
             var r = Number(right.val());
-			if (!isNormalInteger(left.value) || !isNormalInteger(right.value)) {
+			if (!isNormalInteger(left.val()) || !isNormalInteger(right.val())) {
                 alert("Error :(");
                 return false;
             }
