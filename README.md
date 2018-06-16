@@ -1,13 +1,16 @@
-D00
+# Piscine PHP at 42
 
-Image UseMap Tool = https://www.image-map.net
+## Tools
 
+- Image UseMap Tool https://www.image-map.net
 
-PHP Debug
+## Setup PHP Debug
 
+```bash
 brew install homebrew/php/php71-xdebug
-php -v
+```
 
-https://stackoverflow.com/questions/41611601/configuration-of-virtual-host
+## Resources
 
-http://freefrontend.com/css-carousels/
+- https://stackoverflow.com/questions/41611601/configuration-of-virtual-host
+- http://freefrontend.com/css-carousels/
